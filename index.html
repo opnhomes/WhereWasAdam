@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Where Was Adam?</title>
+<meta name="description" content="He was there. He said nothing. It's time to show up.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --charcoal: #17140f;
+    --charcoal-2: #1f1b14;
+    --cream: #f4ecdd;
+    --cream-2: #ece1cd;
+    --rust: #b9552f;
+    --rust-dark: #8f3f22;
+    --gold: #c69a3f;
+    --ink: #23201a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--charcoal);
+    color: var(--cream);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, .display {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 28px;
+    position: relative;
+    background:
+      radial-gradient(ellipse 90% 60% at 50% 0%, rgba(185,85,47,0.16), transparent 60%),
+      var(--charcoal);
+    border-bottom: 1px solid rgba(198,154,63,0.18);
+  }
+
+  .eyebrow {
+    font-size: 13px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 22px;
+    font-weight: 500;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.6rem, 7vw, 4.6rem);
+    line-height: 1.05;
+    color: var(--cream);
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--rust);
+  }
+
+  .tagline {
+    margin-top: 26px;
+    font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+    color: var(--cream-2);
+    max-width: 480px;
+    font-weight: 400;
+  }
+
+  .tagline strong {
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  .scroll-cue {
+    position: absolute;
+    bottom: 36px;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(244,236,221,0.45);
+  }
+
+  /* SECTIONS */
+  section.panel {
+    padding: 96px 0;
+  }
+
+  .panel.dark { background: var(--charcoal); }
+
+  .panel.light {
+    background: var(--cream);
+    color: var(--ink);
+  }
+
+  .panel.light h2 { color: var(--rust-dark); }
+  .panel.dark h2 { color: var(--gold); }
+
+  .kicker {
+    font-size: 12px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+
+  .panel.light .kicker { color: var(--rust); }
+  .panel.dark .kicker { color: var(--rust); }
+
+  h2 {
+    font-size: clamp(1.7rem, 4vw, 2.3rem);
+    margin-bottom: 26px;
+    line-height: 1.2;
+  }
+
+  .panel p {
+    font-size: 1.08rem;
+    margin-bottom: 20px;
+  }
+
+  .panel.light p { color: #40382c; }
+  .panel.dark p { color: var(--cream-2); }
+
+  .verse {
+    margin-top: 40px;
+    padding-left: 22px;
+    border-left: 3px solid var(--rust);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+  }
+
+  .panel.light .verse { color: var(--rust-dark); }
+  .panel.dark .verse { color: var(--cream); }
+
+  .verse cite {
+    display: block;
+    margin-top: 10px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  /* CALL-OUT BLOCK */
+  .callout {
+    background: var(--rust);
+    color: var(--cream);
+    padding: 90px 0;
+    text-align: center;
+  }
+
+  .callout .wrap { max-width: 640px; }
+
+  .callout h2 {
+    color: var(--cream);
+    font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+  }
+
+  .callout p {
+    color: rgba(244,236,221,0.9);
+    font-size: 1.1rem;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--charcoal-2);
+    padding: 56px 0 40px;
+    text-align: center;
+    border-top: 1px solid rgba(198,154,63,0.15);
+  }
+
+  footer .mark {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  footer p {
+    font-size: 0.85rem;
+    color: rgba(244,236,221,0.45);
+  }
+
+  @media (max-width: 560px) {
+    section.panel { padding: 72px 0; }
+    .callout { padding: 64px 0; }
+  }
+</style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="eyebrow">Where Was Adam</div>
+    <h1>He was there.<br><em>He said nothing.</em></h1>
+    <p class="tagline">It's <strong>time to show up.</strong></p>
+    <div class="scroll-cue">Scroll</div>
+  </section>
+
+  <section class="panel light">
+    <div class="wrap">
+      <div class="kicker">The Question</div>
+      <h2>We skip past one detail in the oldest story we know.</h2>
+      <p>
+        When the serpent came for Eve, Adam wasn't away tending some distant field.
+        Scripture is plain about it: he was already standing beside her. Present.
+        Watching. Silent.
+      </p>
+      <p>
+        The first attack on the family God had just made didn't happen while the man
+        was absent. It happened while he stood right there and said nothing.
+      </p>
+      <div class="verse">
+        "She also gave some to her husband, who was with her, and he ate."
+        <cite>Genesis 3:6</cite>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel dark">
+    <div class="wrap">
+      <div class="kicker">The Point</div>
+      <h2>This isn't a story about blame. It's a question about presence.</h2>
+      <p>
+        Every man since Eden has inherited the same post Adam was given and the same
+        silence he fell into. In a marriage, a family, a friendship, a parish, a
+        workplace — there is always a moment that calls for a man to step in, speak up,
+        or simply stand where he said he would stand.
+      </p>
+      <p>
+        Most of the damage done in this world isn't done by monsters. It's done in the
+        gap left by good men who were there, and said nothing.
+      </p>
+    </div>
+  </section>
+
+  <section class="callout">
+    <div class="wrap">
+      <h2>So the question isn't where Adam was. It's where you are right now.</h2>
+      <p>
+        This project is just beginning. What follows will be built for men trying to
+        close that gap — in their marriages, their homes, and their faith. For now,
+        consider this the invitation: show up where you've been standing silent.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="mark">Where Was Adam</div>
+      <p>&copy; 2026 Where Was Adam. More is coming.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
