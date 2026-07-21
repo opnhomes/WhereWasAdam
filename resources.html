@@ -285,17 +285,18 @@
     line-height: 1.6;
   }
 
-  .book-tag {
-    font-size: 10px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
+  .book-category {
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
     font-weight: 600;
-    color: rgba(244,236,221,0.35);
-    border: 1px solid rgba(198,154,63,0.2);
-    padding: 4px 10px;
-    white-space: nowrap;
-    align-self: start;
+    color: var(--gold);
+    margin: 48px 0 0;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(198,154,63,0.2);
+    letter-spacing: -0.01em;
   }
+
+  .book-category:first-of-type { margin-top: 8px; }
 
   /* PRAYER */
   .prayer-block {
@@ -488,23 +489,126 @@
       <div class="kicker">Reading</div>
       <h2>Books worth your time.</h2>
 
+      <!-- IDENTITY -->
+      <h3 class="book-category">Identity</h3>
+
       <div class="book-item">
         <div>
           <p class="book-title">Be a Man</p>
           <p class="book-author">Fr. Larry Richards</p>
           <p class="book-desc">A direct, no-excuses call to Catholic men to embrace masculinity as God designed it — not to apologize for it.</p>
         </div>
-        <span class="book-tag">Faith</span>
       </div>
 
       <div class="book-item">
         <div>
-          <p class="book-title">Wild at Heart</p>
-          <p class="book-author">John Eldredge</p>
-          <p class="book-desc">An exploration of the masculine soul — what men were made for, and why so many are living lives that feel too small.</p>
+          <p class="book-title">Into the Breach</p>
+          <p class="book-author">Knights of Columbus</p>
+          <p class="book-desc">An apostolic exhortation to Catholic men to reclaim their role as protectors, providers, and spiritual leaders.</p>
         </div>
-        <span class="book-tag">Identity</span>
       </div>
+
+      <div class="book-item">
+        <div>
+          <p class="book-title">A Manual for Men</p>
+          <p class="book-author">James Stenson</p>
+          <p class="book-desc">A clear-eyed guide to what men are for — and how to become the kind of man a family and community can count on.</p>
+        </div>
+      </div>
+
+      <div class="book-item">
+        <div>
+          <p class="book-title">Terror of Demons</p>
+          <p class="book-author">Kevin Vost</p>
+          <p class="book-desc">Reclaiming traditional Catholic masculinity — what the Church has always said about what men are and what they're called to do.</p>
+        </div>
+      </div>
+
+      <div class="book-item">
+        <div>
+          <p class="book-title">Behold the Man</p>
+          <p class="book-author">Brian Gail</p>
+          <p class="book-desc">A meditation on Christ as the model of authentic manhood — what it looks like to pattern your life on the only man who got it right.</p>
+        </div>
+      </div>
+
+      <div class="book-item">
+        <div>
+          <p class="book-title">Boys to Men</p>
+          <p class="book-author">Tim Gray &amp; Curtis Martin</p>
+          <p class="book-desc">The transforming power of virtue — how boys become men of character, and what that journey requires of fathers and mentors.</p>
+        </div>
+      </div>
+
+      <div class="book-item">
+        <div>
+          <p class="book-title">Men and Women Are from Eden</p>
+          <p class="book-author">Mary Healy</p>
+          <p class="book-desc">A study guide to John Paul II's Theology of the Body — what God reveals about masculinity, femininity, and the meaning of love.</p>
+        </div>
+      </div>
+
+      <!-- SPIRITUALITY -->
+      <h3 class="book-category">Spirituality</h3>
+
+      <div class="book-item">
+        <div>
+          <p class="book-title">Introduction to the Devout Life</p>
+          <p class="book-author">St. Francis de Sales</p>
+          <p class="book-desc">The classic guide to holiness in ordinary life — for men who want to go deeper without leaving the world behind.</p>
+        </div>
+      </div>
+
+      <div class="book-item">
+        <div>
+          <p class="book-title">The Spiritual Exercises</p>
+          <p class="book-author">St. Ignatius of Loyola</p>
+          <p class="book-desc">The framework that formed the Jesuits and continues to form serious men — a rigorous, structured encounter with God.</p>
+        </div>
+      </div>
+
+      <div class="book-item">
+        <div>
+          <p class="book-title">The Imitation of Christ</p>
+          <p class="book-author">Thomas à Kempis</p>
+          <p class="book-desc">The most widely read Christian book after the Bible. A quiet, devastating challenge to stop thinking about holiness and start living it.</p>
+        </div>
+      </div>
+
+      <div class="book-item">
+        <div>
+          <p class="book-title">Saint Joseph, the Man Closest to Christ</p>
+          <p class="book-author">Fr. Francis Filas, S.J.</p>
+          <p class="book-desc">A deep look at the man God chose to father His Son — and what Joseph's hidden life reveals about faithful, silent strength.</p>
+        </div>
+      </div>
+
+      <div class="book-item">
+        <div>
+          <p class="book-title">Holy Grit</p>
+          <p class="book-author">Tommy Tighe</p>
+          <p class="book-desc">Saints who suffered, failed, and kept going — stories of perseverance for men who need to know that holiness doesn't require perfection.</p>
+        </div>
+      </div>
+
+      <div class="book-item">
+        <div>
+          <p class="book-title">The Confessions</p>
+          <p class="book-author">St. Augustine</p>
+          <p class="book-desc">The autobiography of a man who ran from God for decades — and what happened when he stopped running. One of the most honest books ever written.</p>
+        </div>
+      </div>
+
+      <div class="book-item">
+        <div>
+          <p class="book-title">Story of a Soul</p>
+          <p class="book-author">St. Thérèse of Lisieux</p>
+          <p class="book-desc">Don't mistake her for sentimental. Thérèse's "little way" is a radically demanding path — surrender disguised as simplicity.</p>
+        </div>
+      </div>
+
+      <!-- FAITH -->
+      <h3 class="book-category">Faith</h3>
 
       <div class="book-item">
         <div>
@@ -512,34 +616,6 @@
           <p class="book-author">Matthew Kelly</p>
           <p class="book-desc">What separates the men who live their faith from the ones who've let it become a background detail in their lives.</p>
         </div>
-        <span class="book-tag">Faith</span>
-      </div>
-
-      <div class="book-item">
-        <div>
-          <p class="book-title">Man's Search for Meaning</p>
-          <p class="book-author">Viktor Frankl</p>
-          <p class="book-desc">A psychiatrist who survived the Holocaust on the necessity of a life lived for something beyond yourself.</p>
-        </div>
-        <span class="book-tag">Purpose</span>
-      </div>
-
-      <div class="book-item">
-        <div>
-          <p class="book-title">The Benedict Option</p>
-          <p class="book-author">Rod Dreher</p>
-          <p class="book-desc">A serious case for why Christian men need to stop trying to blend in and start building something that lasts.</p>
-        </div>
-        <span class="book-tag">Culture</span>
-      </div>
-
-      <div class="book-item">
-        <div>
-          <p class="book-title">Introduction to the Devout Life</p>
-          <p class="book-author">St. Francis de Sales</p>
-          <p class="book-desc">The classic guide to holiness in ordinary life — for men who want to go deeper without leaving the world.</p>
-        </div>
-        <span class="book-tag">Spiritual</span>
       </div>
 
     </div>
