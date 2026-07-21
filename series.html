@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The Gap — a six-part series on where men are called to show up." />
+  <title>The Series — Where Was Adam?</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0e0e0e;
+      --off-white: #f4f1ec;
+      --muted: #7a7060;
+      --gold: #b5973a;
+      --gold-light: #d4b55a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: var(--black);
+      color: var(--off-white);
+      line-height: 1.75;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 2rem;
+      background: rgba(14,14,14,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(181,151,58,0.15);
+    }
+
+    .nav-brand {
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--off-white);
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.75;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--gold); }
+
+    /* PAGE HEADER */
+    .page-header {
+      padding: 10rem 2rem 5rem;
+      text-align: center;
+      background: radial-gradient(ellipse at center top, #1a1610 0%, #0e0e0e 60%);
+      border-bottom: 1px solid rgba(181,151,58,0.1);
+    }
+
+    .page-header .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .page-header h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 400;
+      margin-bottom: 1rem;
+      line-height: 1.15;
+    }
+
+    .page-header p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 580px;
+      margin: 0 auto;
+      font-style: italic;
+    }
+
+    /* INTRO */
+    .intro {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 5rem 2rem 3rem;
+      border-bottom: 1px solid rgba(181,151,58,0.1);
+    }
+
+    .intro p {
+      font-size: 1.05rem;
+      color: var(--off-white);
+      opacity: 0.85;
+      margin-bottom: 1.25rem;
+    }
+
+    .scripture {
+      border-left: 2px solid var(--gold);
+      padding: 1rem 1.5rem;
+      margin: 2rem 0;
+      color: var(--gold-light);
+      font-style: italic;
+      font-size: 1rem;
+    }
+
+    /* SERIES LIST */
+    .series-list {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .series-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .reflection {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 0 2rem;
+      padding: 2.5rem 0;
+      border-bottom: 1px solid rgba(181,151,58,0.12);
+      align-items: start;
+    }
+
+    .reflection:first-of-type {
+      border-top: 1px solid rgba(181,151,58,0.12);
+    }
+
+    .reflection-num {
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: rgba(181,151,58,0.25);
+      line-height: 1;
+      padding-top: 0.25rem;
+      font-style: italic;
+    }
+
+    .reflection-body {}
+
+    .reflection-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .reflection h2 {
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+
+    .reflection p {
+      font-size: 0.95rem;
+      color: var(--off-white);
+      opacity: 0.75;
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+
+    .reflection-scripture {
+      font-size: 0.85rem;
+      color: var(--gold-light);
+      font-style: italic;
+      opacity: 0.8;
+    }
+
+    .coming-soon {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid rgba(181,151,58,0.2);
+      padding: 0.25rem 0.75rem;
+      margin-top: 0.75rem;
+    }
+
+    .available {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(181,151,58,0.4);
+      padding: 0.25rem 0.75rem;
+      margin-top: 0.75rem;
+    }
+
+    /* CTA */
+    .series-cta {
+      text-align: center;
+      padding: 4rem 2rem 6rem;
+      border-top: 1px solid rgba(181,151,58,0.1);
+    }
+
+    .series-cta p {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2.25rem;
+      background: var(--gold);
+      color: var(--black);
+      font-family: 'Georgia', serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn:hover { background: var(--gold-light); }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(181,151,58,0.1);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+
+    @media (max-width: 600px) {
+      .nav-links { gap: 1rem; }
+      .nav-links a { font-size: 0.7rem; }
+      .reflection { grid-template-columns: 50px 1fr; gap: 0 1rem; }
+      .reflection-num { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-brand">Where Was Adam</a>
+    <ul class="nav-links">
+      <li><a href="series.html" class="active">The Series</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="join.html">Join</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <p class="eyebrow">The Series</p>
+    <h1>The Gap</h1>
+    <p>Six reflections on where men are called to show up — and what it costs to stay silent.</p>
+  </div>
+
+  <div class="intro">
+    <p>The story of Adam and Eve doesn't end at Genesis 3. It keeps writing itself — in every marriage, every home, every parish, every workplace where a man is present but absent in the ways that count.</p>
+    <p>This series walks through six arenas where the gap between presence and silence is most costly. Not as a guilt trip. As an invitation.</p>
+    <div class="scripture">
+      "Where are you?" — God to Adam, Genesis 3:9<br/>
+      <span style="font-size:0.85rem; opacity: 0.7;">The first question God ever asked a man. He's still asking it.</span>
+    </div>
+  </div>
+
+  <div class="series-list">
+    <p class="series-label">Six Parts &nbsp;·&nbsp; The Gap Series</p>
+
+    <!-- Part 1 -->
+    <div class="reflection">
+      <div class="reflection-num">I</div>
+      <div class="reflection-body">
+        <p class="reflection-tag">Marriage</p>
+        <h2>The Man She Married Is Still in There</h2>
+        <p>She didn't marry a provider or a problem-solver. She married a man who saw her, pursued her, and made her feel known. That man didn't disappear — he went quiet. This reflection is about what it means to be present to your wife in a way that costs you something.</p>
+        <p class="reflection-scripture">"Husbands, love your wives, as Christ loved the church and gave himself up for her." — Ephesians 5:25</p>
+        <span class="available">Available Now</span>
+      </div>
+    </div>
+
+    <!-- Part 2 -->
+    <div class="reflection">
+      <div class="reflection-num">II</div>
+      <div class="reflection-body">
+        <p class="reflection-tag">Fatherhood</p>
+        <h2>Your Kids Don't Need a Coach. They Need a Father.</h2>
+        <p>There is a version of fatherhood that looks like involvement — schedules kept, games attended, help with homework — and still leaves a child alone in the ways that shape them forever. Fatherhood isn't logistics. It's transmission. What are you passing on?</p>
+        <p class="reflection-scripture">"Fathers, do not provoke your children to anger, but bring them up in the discipline and instruction of the Lord." — Ephesians 6:4</p>
+        <span class="available">Available Now</span>
+      </div>
+    </div>
+
+    <!-- Part 3 -->
+    <div class="reflection">
+      <div class="reflection-num">III</div>
+      <div class="reflection-body">
+        <p class="reflection-tag">Friendship</p>
+        <h2>Men Without Brothers</h2>
+        <p>The loneliness epidemic among men is real — and largely self-inflicted. We let friendships thin out, and we call it busy. We lose the men who would have told us the truth. This reflection is about what it takes to build — or rebuild — the kind of friendship that can bear weight.</p>
+        <p class="reflection-scripture">"Iron sharpens iron, and one man sharpens another." — Proverbs 27:17</p>
+        <span class="coming-soon">Coming Soon</span>
+      </div>
+    </div>
+
+    <!-- Part 4 -->
+    <div class="reflection">
+      <div class="reflection-num">IV</div>
+      <div class="reflection-body">
+        <p class="reflection-tag">Parish &amp; Faith</p>
+        <h2>Where Are the Men?</h2>
+        <p>Walk into most parishes on a Sunday morning and you'll notice something. The Church is full of women holding families together spiritually — and men sitting in the back or not sitting at all. Faith was never meant to be delegated. This is about what happens when men lead from their knees.</p>
+        <p class="reflection-scripture">"As for me and my house, we will serve the Lord." — Joshua 24:15</p>
+        <span class="coming-soon">Coming Soon</span>
+      </div>
+    </div>
+
+    <!-- Part 5 -->
+    <div class="reflection">
+      <div class="reflection-num">V</div>
+      <div class="reflection-body">
+        <p class="reflection-tag">Workplace</p>
+        <h2>The Meeting Nobody Wanted to Run</h2>
+        <p>There are moments in every professional life where something wrong is happening and everyone in the room knows it — and everyone waits for someone else to speak first. This reflection is about integrity in the ordinary: what it costs to say the true thing, and what it costs not to.</p>
+        <p class="reflection-scripture">"Let what you say be simply 'Yes' or 'No'; anything more than this comes from evil." — Matthew 5:37</p>
+        <span class="coming-soon">Coming Soon</span>
+      </div>
+    </div>
+
+    <!-- Part 6 -->
+    <div class="reflection">
+      <div class="reflection-num">VI</div>
+      <div class="reflection-body">
+        <p class="reflection-tag">Interior Life</p>
+        <h2>The War Is Inside</h2>
+        <p>Every gap a man leaves in his marriage, his fatherhood, his friendships — it starts somewhere inside him. Fear. Pride. Comfort. Lust. This final reflection goes to the root: the interior life of a man who wants to show up but keeps going silent. Where the real battle is. How to fight it.</p>
+        <p class="reflection-scripture">"Watch over your heart with all diligence, for from it flow the springs of life." — Proverbs 4:23</p>
+        <span class="coming-soon">Coming Soon</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="series-cta">
+    <p>Get each reflection delivered as it's published.</p>
+    <a href="join.html" class="btn">Join the Brotherhood</a>
+  </div>
+
+  <footer>
+    <p>© 2026 Where Was Adam &nbsp;·&nbsp; <a href="series.html">The Series</a> &nbsp;·&nbsp; <a href="resources.html">Resources</a> &nbsp;·&nbsp; <a href="join.html">Join</a></p>
+  </footer>
+
+</body>
+</html>

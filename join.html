@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Join the brotherhood. Receive reflections, challenges, and resources for men who are ready to show up." />
+  <title>Join — Where Was Adam?</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0e0e0e;
+      --off-white: #f4f1ec;
+      --muted: #7a7060;
+      --gold: #b5973a;
+      --gold-light: #d4b55a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: var(--black);
+      color: var(--off-white);
+      line-height: 1.75;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 2rem;
+      background: rgba(14,14,14,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(181,151,58,0.15);
+    }
+
+    .nav-brand {
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--off-white);
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.75;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--gold); }
+
+    /* PAGE HEADER */
+    .page-header {
+      padding: 10rem 2rem 5rem;
+      text-align: center;
+      background: radial-gradient(ellipse at center top, #1a1610 0%, #0e0e0e 60%);
+      border-bottom: 1px solid rgba(181,151,58,0.1);
+    }
+
+    .page-header .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .page-header h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 400;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .page-header p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* MAIN */
+    main {
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    .commitment-block {
+      margin-bottom: 4rem;
+    }
+
+    .commitment-block h2 {
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 1.25rem;
+    }
+
+    .commitment-block p {
+      color: var(--off-white);
+      opacity: 0.85;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .what-you-get {
+      margin: 2.5rem 0;
+      border-left: 2px solid rgba(181,151,58,0.3);
+      padding-left: 1.5rem;
+    }
+
+    .what-you-get li {
+      list-style: none;
+      padding: 0.5rem 0;
+      color: var(--off-white);
+      opacity: 0.85;
+      font-size: 0.95rem;
+    }
+
+    .what-you-get li::before {
+      content: '—';
+      color: var(--gold);
+      margin-right: 0.75rem;
+    }
+
+    /* FORM */
+    .join-form {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(181,151,58,0.2);
+      padding: 2.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(181,151,58,0.25);
+      color: var(--off-white);
+      font-family: 'Georgia', serif;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus {
+      border-color: var(--gold);
+    }
+
+    .form-group input::placeholder {
+      color: var(--muted);
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      background: var(--gold);
+      color: var(--black);
+      font-family: 'Georgia', serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 1.5rem;
+    }
+
+    .btn:hover { background: var(--gold-light); }
+
+    .form-note {
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* SCRIPTURE PULL */
+    .scripture {
+      border-left: 2px solid var(--gold);
+      padding: 1rem 1.5rem;
+      margin: 3rem 0;
+      color: var(--gold-light);
+      font-style: italic;
+      font-size: 1rem;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(181,151,58,0.1);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+
+    @media (max-width: 600px) {
+      .nav-links { gap: 1rem; }
+      .nav-links a { font-size: 0.7rem; }
+      .join-form { padding: 1.75rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-brand">Where Was Adam</a>
+    <ul class="nav-links">
+      <li><a href="series.html">The Series</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="join.html" class="active">Join</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <p class="eyebrow">The Brotherhood</p>
+    <h1>Show up here first.</h1>
+    <p>This is a place for men who are done being bystanders in their own lives.</p>
+  </div>
+
+  <main>
+
+    <div class="commitment-block">
+      <h2>What you're signing up for.</h2>
+      <p>Not a podcast. Not a men's conference announcement. Not motivation that evaporates by Tuesday.</p>
+      <p>This is a slow, serious project — built for men who are ready to close the gap between who they are and who they're called to be. What you'll receive:</p>
+      <ul class="what-you-get">
+        <li>Reflections from The Gap series, delivered directly</li>
+        <li>A weekly challenge — one concrete thing to do this week</li>
+        <li>Resources: books, Scripture, and tools worth your time</li>
+        <li>Updates as this community grows</li>
+      </ul>
+      <p>No noise. No spam. Just the work.</p>
+    </div>
+
+    <div class="scripture">
+      "Be watchful, stand firm in the faith, act like men, be strong." — 1 Corinthians 16:13
+    </div>
+
+    <form class="join-form" action="#" method="post">
+      <div class="form-group">
+        <label for="first-name">First Name</label>
+        <input type="text" id="first-name" name="first_name" placeholder="Your first name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Your email address" required />
+      </div>
+      <button type="submit" class="btn">I'm In — Sign Me Up</button>
+      <p class="form-note">No spam. Unsubscribe anytime. This is a brotherhood, not a mailing list.</p>
+    </form>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Where Was Adam &nbsp;·&nbsp; <a href="series.html">The Series</a> &nbsp;·&nbsp; <a href="resources.html">Resources</a> &nbsp;·&nbsp; <a href="join.html">Join</a></p>
+  </footer>
+
+</body>
+</html>
