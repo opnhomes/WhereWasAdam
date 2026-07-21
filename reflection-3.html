@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Weight of the Word — Where Was Adam?</title>
+<meta name="description" content="Fatherhood is a vocation — a call to image God the Father in the life of a child. A reflection on presence, blessing, and closing the gap.">
+<meta name="theme-color" content="#17140f">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --charcoal: #17140f;
+    --charcoal-2: #1f1b14;
+    --cream: #f4ecdd;
+    --cream-2: #ece1cd;
+    --rust: #b9552f;
+    --rust-dark: #8f3f22;
+    --gold: #c69a3f;
+    --ink: #23201a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--charcoal);
+    color: var(--cream);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 28px;
+    background: rgba(23,20,15,0.93);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(198,154,63,0.15);
+  }
+
+  .nav-brand {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cream-2);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.2s, color 0.2s;
+  }
+
+  .nav-links a:hover { opacity: 1; color: var(--gold); }
+
+  /* PAGE HERO */
+  .page-hero {
+    padding: 140px 28px 80px;
+    background:
+      radial-gradient(ellipse 90% 60% at 50% 0%, rgba(185,85,47,0.16), transparent 60%),
+      var(--charcoal);
+    border-bottom: 1px solid rgba(198,154,63,0.18);
+  }
+
+  .series-tag {
+    font-size: 11px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--rust);
+    margin-bottom: 20px;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+    line-height: 1.08;
+    color: var(--cream);
+    margin-bottom: 20px;
+    max-width: 640px;
+  }
+
+  .page-hero .subtitle {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--cream-2);
+    opacity: 0.75;
+    max-width: 500px;
+  }
+
+  /* BODY CONTENT */
+  .reflection-body {
+    padding: 80px 0 60px;
+  }
+
+  .reflection-body p {
+    font-size: 1.08rem;
+    color: var(--cream-2);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+  }
+
+  .reflection-body h2 {
+    font-size: clamp(1.3rem, 3vw, 1.7rem);
+    color: var(--gold);
+    margin: 3.5rem 0 1.25rem;
+    line-height: 1.2;
+  }
+
+  /* SCRIPTURE PULL */
+  .verse {
+    margin: 2.5rem 0;
+    padding-left: 22px;
+    border-left: 3px solid var(--rust);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--cream);
+  }
+
+  .verse cite {
+    display: block;
+    margin-top: 10px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+
+  /* EMPHASIS */
+  .key-line {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+    color: var(--cream);
+    line-height: 1.5;
+    margin: 2.5rem 0;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(198,154,63,0.2);
+    border-bottom: 1px solid rgba(198,154,63,0.2);
+  }
+
+  /* THREE GAPS */
+  .gap-item {
+    margin: 2rem 0;
+    padding-left: 22px;
+    border-left: 3px solid rgba(198,154,63,0.3);
+  }
+
+  .gap-item .gap-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .gap-item h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.15rem;
+    color: var(--cream);
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .gap-item p {
+    margin-bottom: 0 !important;
+  }
+
+  /* BLESSING BOX */
+  .blessing-box {
+    background: var(--charcoal-2);
+    border: 1px solid rgba(198,154,63,0.25);
+    padding: 32px 36px;
+    margin: 2.5rem 0;
+  }
+
+  .blessing-box .blessing-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .blessing-box p {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--cream) !important;
+    line-height: 1.7;
+    margin-bottom: 0 !important;
+  }
+
+  /* REFLECTION BOX */
+  .reflection-box {
+    background: var(--charcoal-2);
+    border: 1px solid rgba(198,154,63,0.25);
+    padding: 36px;
+    margin: 3rem 0;
+  }
+
+  .reflection-box .box-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .reflection-box ol {
+    padding-left: 20px;
+  }
+
+  .reflection-box ol li {
+    font-size: 1rem;
+    color: var(--cream-2);
+    line-height: 1.75;
+    margin-bottom: 14px;
+  }
+
+  .reflection-box ol li:last-child { margin-bottom: 0; }
+
+  /* CLOSING */
+  .closing-line {
+    font-family: 'Fraunces', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--cream);
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+
+  /* QUOTE */
+  .attribution-quote {
+    margin: 3rem 0 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(198,154,63,0.15);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: rgba(244,236,221,0.55);
+    line-height: 1.7;
+  }
+
+  .attribution-quote cite {
+    display: block;
+    margin-top: 8px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  /* SERIES NAV */
+  .series-nav {
+    background: var(--charcoal-2);
+    border-top: 1px solid rgba(198,154,63,0.15);
+    padding: 48px 28px;
+  }
+
+  .series-nav .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .series-nav-back a {
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: rgba(244,236,221,0.5);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .series-nav-back a:hover { color: var(--gold); }
+
+  .series-nav-next {
+    text-align: right;
+  }
+
+  .series-nav-next .next-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rust);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .series-nav-next a {
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    color: var(--cream);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .series-nav-next a:hover { color: var(--gold); }
+
+  /* CTA */
+  .callout {
+    background: var(--rust);
+    padding: 80px 28px;
+    text-align: center;
+  }
+
+  .callout .wrap { max-width: 580px; }
+
+  .callout h2 {
+    color: var(--cream);
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    margin-bottom: 14px;
+  }
+
+  .callout p {
+    color: rgba(244,236,221,0.88);
+    font-size: 1rem;
+    margin-bottom: 28px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 13px 26px;
+    background: var(--cream);
+    color: var(--rust-dark);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .btn:hover { background: var(--cream-2); }
+
+  /* FOOTER */
+  footer {
+    background: var(--charcoal-2);
+    padding: 48px 0 36px;
+    text-align: center;
+    border-top: 1px solid rgba(198,154,63,0.12);
+  }
+
+  footer .mark {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  footer p { font-size: 0.82rem; color: rgba(244,236,221,0.4); }
+  footer a { color: rgba(244,236,221,0.4); text-decoration: none; }
+  footer a:hover { color: var(--gold); }
+
+  @media (max-width: 560px) {
+    .series-nav .wrap { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+    .series-nav-next { text-align: left; }
+    .nav-links { gap: 1.25rem; }
+    .nav-links a { font-size: 0.7rem; }
+    .blessing-box { padding: 24px 22px; }
+    .reflection-box { padding: 28px 22px; }
+  }
+</style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-brand">Where Was Adam</a>
+    <ul class="nav-links">
+      <li><a href="series.html">The Series</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="join.html">Join</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <div class="wrap">
+      <p class="series-tag">The Gap &nbsp;·&nbsp; Part III &nbsp;·&nbsp; Fatherhood</p>
+      <h1>The Weight of the Word</h1>
+      <p class="subtitle">On the gap in fatherhood — physical, emotional, and spiritual — and the blessing that closes it.</p>
+    </div>
+  </div>
+
+  <div class="reflection-body">
+    <div class="wrap">
+
+      <p>There is no word in the human language more loaded with expectation than <em>father</em>.</p>
+
+      <p>It carries everything. Protection. Provision. Presence. Blessing. Discipline. Tenderness. Legacy. And for too many men — shame. Because somewhere between the man they intended to be and the man they became, a gap opened up. And their children are living in it.</p>
+
+      <p>This reflection is not an accusation. It is an invitation.</p>
+
+      <p>God is still asking — <em>Where are you?</em></p>
+
+      <h2>The Father Wound</h2>
+
+      <p>Before a man can become the father his children need, he usually has to reckon with the father he had — or didn't have.</p>
+
+      <p>Research consistently shows that father absence is one of the most powerful predictors of nearly every social pathology — addiction, incarceration, teen pregnancy, anxiety, depression, and loss of faith. But the statistics only measure what can be counted. They cannot measure the quiet wound carried by a son whose father was home every night but never really there — never present, never affirming, never willing to speak into his son's life with love and authority.</p>
+
+      <p>The father wound is real. And it is generational. Wounded sons become wounded fathers unless something intervenes.</p>
+
+      <p>That something is grace.</p>
+
+      <h2>What God the Father Reveals</h2>
+
+      <p>The starting point for Catholic fatherhood is not a parenting strategy. It is a theological truth: human fatherhood is a participation in divine fatherhood.</p>
+
+      <div class="verse">
+        "I kneel before the Father, from whom every family in heaven and on earth is named."
+        <cite>Ephesians 3:14–15</cite>
+      </div>
+
+      <p>Every family. Every father. Every act of fatherly love — however imperfect — is meant to be a visible sign of the invisible love of God the Father. A child's first understanding of God is mediated through his or her earthly father. This is not sentiment. This is theology.</p>
+
+      <p>Which means the stakes could not be higher.</p>
+
+      <p>When a father is absent — physically or spiritually — he does not just leave a hole in the family. He leaves a distorted image of God in the heart of his child. A child whose father was cold, distant, harsh, or absent will struggle to believe that God the Father is warm, present, tender, and trustworthy.</p>
+
+      <div class="key-line">
+        The gap in fatherhood is a gap in the image of God.
+      </div>
+
+      <h2>The Model: St. Joseph</h2>
+
+      <p>There is no better model for Catholic fatherhood than St. Joseph — and no figure more misunderstood.</p>
+
+      <p>Joseph is often presented as a passive bystander — the quiet man in the corner of the nativity scene. Nothing could be further from the truth.</p>
+
+      <p>Joseph was a man of radical obedience and decisive action. When the angel spoke, Joseph moved — immediately. He took Mary as his wife. He fled to Egypt in the middle of the night to protect his family. He provided, protected, and led — all in faithful silence, without a single recorded word in all of Scripture.</p>
+
+      <p>Joseph did not need to speak loudly. His life spoke.</p>
+
+      <p>He was present. He was trustworthy. He was strong. And he ordered every ounce of that strength toward the protection and flourishing of the family God had entrusted to him.</p>
+
+      <p>That is the template. Not perfection — Joseph was not the biological father of Jesus — but faithful presence ordered toward the good of the child.</p>
+
+      <h2>The Three Gaps in Fatherhood</h2>
+
+      <p>There are three specific ways men abdicate their role as fathers — and all three echo Adam's silence in the garden.</p>
+
+      <div class="gap-item">
+        <p class="gap-label">Gap One</p>
+        <h3>Physical Absence</h3>
+        <p>Some men simply are not there. Divorce, work, distraction, addiction — whatever the cause, the effect is the same. A child grows up looking for a father and finding an empty chair.</p>
+      </div>
+
+      <div class="gap-item">
+        <p class="gap-label">Gap Two</p>
+        <h3>Emotional Absence</h3>
+        <p>Perhaps the more common gap today. The father is home. He is at the dinner table. He coaches the soccer team. But he has never told his son he is proud of him. He has never sat with his daughter in her pain. He has never spoken a word of blessing over his children's lives. He provides — but he does not give himself.</p>
+      </div>
+
+      <div class="gap-item">
+        <p class="gap-label">Gap Three</p>
+        <h3>Spiritual Absence</h3>
+        <p>This is the deepest gap of all — and the least discussed. A father who does not lead his family in prayer, who does not bring his children to Mass, who does not speak the name of God in his home, has left his family spiritually defenseless. He has handed the formation of his children's souls to the culture — and the culture has very different plans for them.</p>
+      </div>
+
+      <h2>The Blessing That Changes Everything</h2>
+
+      <p>In the Old Testament, a father's blessing was not a formality. It was a spiritual act of transmission — the passing of identity, destiny, and grace from one generation to the next. Isaac blessed Jacob. Jacob blessed his twelve sons. The blessing of a father carried the weight of covenant.</p>
+
+      <p>That power has not disappeared. It has simply been forgotten.</p>
+
+      <p>There is something a father can give his child that no coach, teacher, therapist, or mentor can replicate — the spoken blessing of a father who sees his child, knows his child, and declares his child beloved.</p>
+
+      <p>If you have never blessed your children — spoken over them with love, laid hands on them, told them who they are in God's eyes — that is where closing the gap begins. Not with a program. Not with a promise to be home more. With a word. Tonight. At the dinner table or at the bedside.</p>
+
+      <div class="blessing-box">
+        <p class="blessing-label">A Father's Blessing</p>
+        <p>"You are my son. You are my daughter. I am proud of you. I love you. And God has great plans for your life."</p>
+      </div>
+
+      <p>Those words cost nothing. They are worth everything.</p>
+
+      <h2>The Prodigal Father</h2>
+
+      <p>The most famous parable in all of Scripture is usually called the Parable of the Prodigal Son. But read it again carefully — and notice who the real subject is.</p>
+
+      <p>It is the father.</p>
+
+      <p>He sees his son while he is still a long way off. He runs. He throws his arms around him. He calls for the robe, the ring, the feast. He does not wait for the son to clean himself up. He does not deliver a lecture. He restores him — fully, immediately, extravagantly.</p>
+
+      <p>That is the Father God is calling every man to become.</p>
+
+      <p>Not a perfect father. Not a father who never fails. But a father who runs — who refuses to let the gap be the final word — who gets up and closes the distance no matter what it costs.</p>
+
+      <h2>Closing the Gap</h2>
+
+      <p>Fatherhood is not a role. It is a vocation — a specific call from God to image His own fatherly love in the life of a child.</p>
+
+      <p>The gap closes one day at a time. One conversation at a time. One bedtime prayer at a time. One honest apology at a time. One blessing spoken over a child's life at a time.</p>
+
+      <p>Adam was silent when he should have spoken. Joseph spoke — through action, through presence, through sacrifice — and the Word of God grew up under his roof.</p>
+
+      <p>The question is the same for every father today:</p>
+
+      <p class="closing-line">Will you be Adam — or will you be Joseph?</p>
+
+      <div class="reflection-box">
+        <p class="box-label">For Reflection</p>
+        <ol>
+          <li>What kind of image of God the Father are your children receiving through you?</li>
+          <li>Is there a blessing you have never spoken over your child that needs to be spoken?</li>
+          <li>Where is the gap in your fatherhood — physical, emotional, or spiritual?</li>
+        </ol>
+      </div>
+
+      <blockquote class="attribution-quote">
+        "The greatest thing a father can do for his children is to love their mother."
+        <cite>— Theodore Hesburgh</cite>
+      </blockquote>
+
+    </div>
+  </div>
+
+  <div class="series-nav">
+    <div class="wrap">
+      <div class="series-nav-back">
+        <a href="reflection-2.html">← The Man She Married Is Still in There</a>
+      </div>
+      <div class="series-nav-next">
+        <p class="next-label">Next in The Gap</p>
+        <a href="series.html">Men Without Brothers →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="wrap">
+      <h2>Get the next reflection when it's published.</h2>
+      <p>Join the brotherhood and receive each part of The Gap series directly.</p>
+      <a href="join.html" class="btn">Join the Brotherhood</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <div class="mark">Where Was Adam</div>
+      <p>© 2026 Where Was Adam &nbsp;·&nbsp; <a href="series.html">The Series</a> &nbsp;·&nbsp; <a href="resources.html">Resources</a> &nbsp;·&nbsp; <a href="join.html">Join</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
