@@ -1,338 +1,407 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Scripture, books, and a weekly challenge for men who are ready to close the gap." />
-  <title>Resources — Where Was Adam?</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources — Where Was Adam?</title>
+<meta name="description" content="Scripture, books, and a weekly challenge for men who are ready to close the gap.">
+<meta name="theme-color" content="#17140f">
 
-    :root {
-      --black: #0e0e0e;
-      --off-white: #f4f1ec;
-      --muted: #7a7060;
-      --gold: #b5973a;
-      --gold-light: #d4b55a;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --charcoal: #17140f;
+    --charcoal-2: #1f1b14;
+    --cream: #f4ecdd;
+    --cream-2: #ece1cd;
+    --rust: #b9552f;
+    --rust-dark: #8f3f22;
+    --gold: #c69a3f;
+    --ink: #23201a;
+  }
 
-    html { scroll-behavior: smooth; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
 
-    body {
-      font-family: 'Georgia', serif;
-      background: var(--black);
-      color: var(--off-white);
-      line-height: 1.75;
-    }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--charcoal);
+    color: var(--cream);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
 
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.25rem 2rem;
-      background: rgba(14,14,14,0.92);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(181,151,58,0.15);
-    }
+  h1, h2, h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
 
-    .nav-brand {
-      font-size: 0.85rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      text-decoration: none;
-    }
+  a { color: inherit; }
 
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
 
-    .nav-links a {
-      color: var(--off-white);
-      text-decoration: none;
-      font-size: 0.8rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      opacity: 0.75;
-      transition: opacity 0.2s;
-    }
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 28px;
+    background: rgba(23,20,15,0.93);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(198,154,63,0.15);
+  }
 
-    .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--gold); }
+  .nav-brand {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--gold);
+    text-decoration: none;
+  }
 
-    /* PAGE HEADER */
-    .page-header {
-      padding: 10rem 2rem 5rem;
-      text-align: center;
-      background: radial-gradient(ellipse at center top, #1a1610 0%, #0e0e0e 60%);
-      border-bottom: 1px solid rgba(181,151,58,0.1);
-    }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
 
-    .page-header .eyebrow {
-      font-size: 0.7rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-    }
+  .nav-links a {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cream-2);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.2s, color 0.2s;
+  }
 
-    .page-header h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 400;
-      margin-bottom: 1rem;
-      line-height: 1.2;
-    }
+  .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--gold); }
 
-    .page-header p {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 520px;
-      margin: 0 auto;
-    }
+  /* PAGE HEADER */
+  .page-hero {
+    padding: 140px 28px 80px;
+    text-align: center;
+    background:
+      radial-gradient(ellipse 90% 60% at 50% 0%, rgba(185,85,47,0.16), transparent 60%),
+      var(--charcoal);
+    border-bottom: 1px solid rgba(198,154,63,0.18);
+  }
 
-    /* MAIN */
-    main {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 5rem 2rem;
-    }
+  .eyebrow {
+    font-size: 13px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 22px;
+    font-weight: 500;
+  }
 
-    /* SECTION BLOCKS */
-    .resource-block {
-      margin-bottom: 5rem;
-    }
+  .page-hero h1 {
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    line-height: 1.05;
+    color: var(--cream);
+    margin-bottom: 18px;
+  }
 
-    .block-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid rgba(181,151,58,0.2);
-    }
+  .page-hero p {
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    color: var(--cream-2);
+    max-width: 520px;
+    margin: 0 auto;
+    opacity: 0.8;
+  }
 
-    /* WEEKLY CHALLENGE */
-    .challenge-card {
-      background: linear-gradient(135deg, #1a1610 0%, #141210 100%);
-      border: 1px solid rgba(181,151,58,0.3);
-      padding: 2.5rem;
-      margin-bottom: 1rem;
-    }
+  /* SECTIONS */
+  section.panel { padding: 96px 0; }
+  .panel.dark { background: var(--charcoal); }
+  .panel.light { background: var(--cream); color: var(--ink); }
+  .panel.light h2, .panel.light h3 { color: var(--rust-dark); }
+  .panel.dark h2, .panel.dark h3 { color: var(--gold); }
 
-    .challenge-week {
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.75rem;
-    }
+  .kicker {
+    font-size: 12px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 18px;
+    color: var(--rust);
+  }
 
-    .challenge-card h2 {
-      font-size: 1.5rem;
-      font-weight: 400;
-      margin-bottom: 1rem;
-      line-height: 1.3;
-    }
+  h2 {
+    font-size: clamp(1.7rem, 4vw, 2.3rem);
+    margin-bottom: 26px;
+    line-height: 1.2;
+  }
 
-    .challenge-card p {
-      color: var(--off-white);
-      opacity: 0.8;
-      font-size: 0.95rem;
-      margin-bottom: 1rem;
-    }
+  .panel p { font-size: 1.08rem; margin-bottom: 20px; }
+  .panel.light p { color: #40382c; }
+  .panel.dark p { color: var(--cream-2); }
 
-    .challenge-card .the-ask {
-      border-left: 2px solid var(--gold);
-      padding: 0.75rem 1.25rem;
-      margin-top: 1.5rem;
-      color: var(--gold-light);
-      font-style: italic;
-      font-size: 0.95rem;
-    }
+  .verse {
+    margin-top: 40px;
+    padding-left: 22px;
+    border-left: 3px solid var(--rust);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+  }
 
-    /* SCRIPTURE GRID */
-    .scripture-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.25rem;
-    }
+  .panel.light .verse { color: var(--rust-dark); }
+  .panel.dark .verse { color: var(--cream); }
 
-    .scripture-card {
-      border: 1px solid rgba(181,151,58,0.15);
-      padding: 1.75rem;
-      transition: border-color 0.2s;
-    }
+  .verse cite {
+    display: block;
+    margin-top: 10px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
 
-    .scripture-card:hover {
-      border-color: rgba(181,151,58,0.4);
-    }
+  /* WEEKLY CHALLENGE */
+  .challenge-card {
+    border: 1px solid rgba(185,85,47,0.35);
+    padding: 36px;
+    margin-top: 8px;
+    background: rgba(185,85,47,0.06);
+  }
 
-    .scripture-ref {
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.75rem;
-    }
+  .challenge-week {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(244,236,221,0.4);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
 
-    .scripture-card blockquote {
-      font-style: italic;
-      font-size: 0.95rem;
-      color: var(--off-white);
-      opacity: 0.85;
-      line-height: 1.65;
-      margin-bottom: 0.75rem;
-    }
+  .challenge-card h3 {
+    font-size: clamp(1.3rem, 3vw, 1.65rem);
+    color: var(--cream);
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
 
-    .scripture-card .context {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
+  .challenge-card p {
+    font-size: 1rem !important;
+    color: var(--cream-2) !important;
+    opacity: 0.85;
+    margin-bottom: 16px !important;
+    line-height: 1.7;
+  }
 
-    /* BOOKS */
-    .book-list {
-      display: grid;
-      gap: 0;
-    }
+  .the-ask {
+    border-left: 3px solid var(--rust);
+    padding: 12px 18px;
+    margin-top: 20px;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--cream-2);
+  }
 
-    .book-item {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 1rem;
-      padding: 1.5rem 0;
-      border-bottom: 1px solid rgba(181,151,58,0.1);
-      align-items: start;
-    }
+  /* SCRIPTURE GRID */
+  .scripture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1px;
+    background: rgba(198,154,63,0.12);
+    margin-top: 8px;
+  }
 
-    .book-item:first-child {
-      border-top: 1px solid rgba(181,151,58,0.1);
-    }
+  .scripture-card {
+    background: var(--cream);
+    padding: 28px;
+  }
 
-    .book-title {
-      font-size: 1rem;
-      font-weight: 400;
-      margin-bottom: 0.2rem;
-      color: var(--off-white);
-    }
+  .scripture-ref {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rust);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
 
-    .book-author {
-      font-size: 0.8rem;
-      color: var(--gold);
-      margin-bottom: 0.5rem;
-    }
+  .scripture-card blockquote {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--rust-dark);
+    line-height: 1.55;
+    margin-bottom: 10px;
+  }
 
-    .book-desc {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
+  .scripture-card .context {
+    font-size: 0.83rem;
+    color: #6b5c47;
+    line-height: 1.5;
+  }
 
-    .book-tag {
-      font-size: 0.6rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--muted);
-      border: 1px solid rgba(181,151,58,0.2);
-      padding: 0.2rem 0.6rem;
-      white-space: nowrap;
-      align-self: start;
-      margin-top: 0.25rem;
-    }
+  /* BOOKS */
+  .book-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(198,154,63,0.12);
+    align-items: start;
+  }
 
-    /* PRAYER */
-    .prayer-block {
-      background: rgba(181,151,58,0.04);
-      border: 1px solid rgba(181,151,58,0.15);
-      padding: 2.5rem;
-      text-align: center;
-    }
+  .book-item:first-child { border-top: 1px solid rgba(198,154,63,0.12); }
 
-    .prayer-block .prayer-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-    }
+  .book-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 4px;
+  }
 
-    .prayer-block h2 {
-      font-size: 1.1rem;
-      font-weight: 400;
-      margin-bottom: 1.5rem;
-      color: var(--muted);
-      font-style: italic;
-    }
+  .book-author {
+    font-size: 0.82rem;
+    color: var(--gold);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
 
-    .prayer-text {
-      font-size: 1rem;
-      line-height: 1.9;
-      color: var(--off-white);
-      opacity: 0.85;
-      max-width: 480px;
-      margin: 0 auto;
-      font-style: italic;
-    }
+  .book-desc {
+    font-size: 0.88rem;
+    color: var(--cream-2);
+    opacity: 0.75;
+    line-height: 1.6;
+  }
 
-    .prayer-attr {
-      margin-top: 1.5rem;
-      font-size: 0.75rem;
-      color: var(--muted);
-      font-style: normal;
-    }
+  .book-tag {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgba(244,236,221,0.35);
+    border: 1px solid rgba(198,154,63,0.2);
+    padding: 4px 10px;
+    white-space: nowrap;
+    align-self: start;
+  }
 
-    /* CTA */
-    .resources-cta {
-      text-align: center;
-      padding: 3rem 2rem 5rem;
-    }
+  /* PRAYER */
+  .prayer-block {
+    background: var(--charcoal-2);
+    border: 1px solid rgba(198,154,63,0.18);
+    padding: 48px 40px;
+    text-align: center;
+    margin-top: 8px;
+  }
 
-    .resources-cta p {
-      color: var(--muted);
-      margin-bottom: 1.5rem;
-    }
+  .prayer-label {
+    font-size: 12px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--rust);
+    margin-bottom: 20px;
+  }
 
-    .btn {
-      display: inline-block;
-      padding: 0.9rem 2.25rem;
-      background: var(--gold);
-      color: var(--black);
-      font-family: 'Georgia', serif;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
+  .prayer-text {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.08rem;
+    line-height: 2;
+    color: var(--cream);
+    opacity: 0.88;
+    max-width: 440px;
+    margin: 0 auto;
+  }
 
-    .btn:hover { background: var(--gold-light); }
+  .prayer-attr {
+    margin-top: 24px;
+    font-size: 0.78rem;
+    color: rgba(244,236,221,0.35);
+    font-style: normal;
+    letter-spacing: 0.06em;
+  }
 
-    /* FOOTER */
-    footer {
-      border-top: 1px solid rgba(181,151,58,0.1);
-      padding: 2.5rem 2rem;
-      text-align: center;
-      font-size: 0.8rem;
-      color: var(--muted);
-      letter-spacing: 0.05em;
-    }
+  /* CALLOUT */
+  .callout {
+    background: var(--rust);
+    color: var(--cream);
+    padding: 90px 0;
+    text-align: center;
+  }
 
-    footer a { color: var(--muted); text-decoration: none; }
-    footer a:hover { color: var(--gold); }
+  .callout .wrap { max-width: 600px; }
 
-    @media (max-width: 600px) {
-      .nav-links { gap: 1rem; }
-      .nav-links a { font-size: 0.7rem; }
-      .challenge-card { padding: 1.75rem 1.25rem; }
-      .book-item { grid-template-columns: 1fr; }
-    }
-  </style>
+  .callout h2 {
+    color: var(--cream);
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    margin-bottom: 18px;
+  }
+
+  .callout p {
+    color: rgba(244,236,221,0.9);
+    font-size: 1.05rem;
+    margin-bottom: 28px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 13px 26px;
+    background: var(--cream);
+    color: var(--rust-dark);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .btn:hover { background: var(--cream-2); }
+
+  /* FOOTER */
+  footer {
+    background: var(--charcoal-2);
+    padding: 56px 0 40px;
+    text-align: center;
+    border-top: 1px solid rgba(198,154,63,0.15);
+  }
+
+  footer .mark {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  footer p { font-size: 0.85rem; color: rgba(244,236,221,0.45); }
+  footer a { color: rgba(244,236,221,0.45); text-decoration: none; }
+  footer a:hover { color: var(--gold); }
+
+  @media (max-width: 560px) {
+    section.panel { padding: 72px 0; }
+    .nav-links { gap: 1.25rem; }
+    .nav-links a { font-size: 0.7rem; }
+    .challenge-card { padding: 24px 20px; }
+    .prayer-block { padding: 36px 20px; }
+    .book-item { grid-template-columns: 1fr; }
+    .callout { padding: 64px 0; }
+  }
+</style>
 </head>
 <body>
 
@@ -345,31 +414,32 @@
     </ul>
   </nav>
 
-  <div class="page-header">
-    <p class="eyebrow">Resources</p>
+  <div class="page-hero">
+    <div class="eyebrow">Resources</div>
     <h1>Tools for the Work</h1>
     <p>Scripture, books, a weekly challenge, and a prayer for men who are done being passive.</p>
   </div>
 
-  <main>
-
-    <!-- WEEKLY CHALLENGE -->
-    <div class="resource-block">
-      <p class="block-label">This Week's Challenge</p>
+  <!-- WEEKLY CHALLENGE -->
+  <section class="panel dark">
+    <div class="wrap">
+      <div class="kicker">This Week's Challenge</div>
+      <h2>Have the conversation you've been avoiding.</h2>
       <div class="challenge-card">
         <p class="challenge-week">Week of July 20, 2026</p>
-        <h2>Have the conversation you've been avoiding.</h2>
+        <h3>Have the conversation you've been avoiding.</h3>
         <p>Every man reading this has something he needs to say to someone — a wife, a child, a friend, a colleague — that he's been putting off. Not because he doesn't know what to say. Because it will cost him something to say it.</p>
         <p>This week, say it. Not a text. Not an email. A real conversation, face to face or voice to voice. Before Sunday.</p>
-        <div class="the-ask">
-          The ask: Identify the conversation. Have it before this week ends. Tell someone you're going to do it — that accountability matters.
-        </div>
+        <div class="the-ask">The ask: Identify the conversation. Have it before this week ends. Tell someone you're going to do it — that accountability matters.</div>
       </div>
     </div>
+  </section>
 
-    <!-- SCRIPTURE -->
-    <div class="resource-block">
-      <p class="block-label">Scripture for Men Who Need to Show Up</p>
+  <!-- SCRIPTURE -->
+  <section class="panel light">
+    <div class="wrap">
+      <div class="kicker">Scripture</div>
+      <h2>For men who need to show up.</h2>
       <div class="scripture-grid">
 
         <div class="scripture-card">
@@ -410,74 +480,78 @@
 
       </div>
     </div>
+  </section>
 
-    <!-- BOOKS -->
-    <div class="resource-block">
-      <p class="block-label">Books Worth Your Time</p>
-      <div class="book-list">
+  <!-- BOOKS -->
+  <section class="panel dark">
+    <div class="wrap">
+      <div class="kicker">Reading</div>
+      <h2>Books worth your time.</h2>
 
-        <div class="book-item">
-          <div>
-            <p class="book-title">The Way of the Lord with Men</p>
-            <p class="book-author">Fr. Larry Richards</p>
-            <p class="book-desc">A direct, no-excuses call to Catholic men to step into their role as husbands, fathers, and leaders in the faith.</p>
-          </div>
-          <span class="book-tag">Faith</span>
+      <div class="book-item">
+        <div>
+          <p class="book-title">Be a Man</p>
+          <p class="book-author">Fr. Larry Richards</p>
+          <p class="book-desc">A direct, no-excuses call to Catholic men to embrace masculinity as God designed it — not to apologize for it.</p>
         </div>
-
-        <div class="book-item">
-          <div>
-            <p class="book-title">Wild at Heart</p>
-            <p class="book-author">John Eldredge</p>
-            <p class="book-desc">An exploration of the masculine soul — what men were made for, and why so many are living lives that feel too small.</p>
-          </div>
-          <span class="book-tag">Identity</span>
-        </div>
-
-        <div class="book-item">
-          <div>
-            <p class="book-title">The Four Signs of a Dynamic Catholic</p>
-            <p class="book-author">Matthew Kelly</p>
-            <p class="book-desc">What separates the men who practice their faith from the ones who've let it become a background detail in their lives.</p>
-          </div>
-          <span class="book-tag">Faith</span>
-        </div>
-
-        <div class="book-item">
-          <div>
-            <p class="book-title">Man's Search for Meaning</p>
-            <p class="book-author">Viktor Frankl</p>
-            <p class="book-desc">A psychiatrist who survived the Holocaust on the indispensable necessity of a life lived for something beyond yourself.</p>
-          </div>
-          <span class="book-tag">Purpose</span>
-        </div>
-
-        <div class="book-item">
-          <div>
-            <p class="book-title">The Benedict Option</p>
-            <p class="book-author">Rod Dreher</p>
-            <p class="book-desc">A serious case for why Christian men need to stop trying to blend in and start building something that lasts.</p>
-          </div>
-          <span class="book-tag">Culture</span>
-        </div>
-
-        <div class="book-item">
-          <div>
-            <p class="book-title">Letters to a Young Catholic</p>
-            <p class="book-author">George Weigel</p>
-            <p class="book-desc">A tour of the Catholic intellectual and spiritual tradition — what's available to a man who decides to actually go deep.</p>
-          </div>
-          <span class="book-tag">Faith</span>
-        </div>
-
+        <span class="book-tag">Faith</span>
       </div>
-    </div>
 
-    <!-- PRAYER -->
-    <div class="resource-block">
+      <div class="book-item">
+        <div>
+          <p class="book-title">Wild at Heart</p>
+          <p class="book-author">John Eldredge</p>
+          <p class="book-desc">An exploration of the masculine soul — what men were made for, and why so many are living lives that feel too small.</p>
+        </div>
+        <span class="book-tag">Identity</span>
+      </div>
+
+      <div class="book-item">
+        <div>
+          <p class="book-title">The Four Signs of a Dynamic Catholic</p>
+          <p class="book-author">Matthew Kelly</p>
+          <p class="book-desc">What separates the men who live their faith from the ones who've let it become a background detail in their lives.</p>
+        </div>
+        <span class="book-tag">Faith</span>
+      </div>
+
+      <div class="book-item">
+        <div>
+          <p class="book-title">Man's Search for Meaning</p>
+          <p class="book-author">Viktor Frankl</p>
+          <p class="book-desc">A psychiatrist who survived the Holocaust on the necessity of a life lived for something beyond yourself.</p>
+        </div>
+        <span class="book-tag">Purpose</span>
+      </div>
+
+      <div class="book-item">
+        <div>
+          <p class="book-title">The Benedict Option</p>
+          <p class="book-author">Rod Dreher</p>
+          <p class="book-desc">A serious case for why Christian men need to stop trying to blend in and start building something that lasts.</p>
+        </div>
+        <span class="book-tag">Culture</span>
+      </div>
+
+      <div class="book-item">
+        <div>
+          <p class="book-title">Introduction to the Devout Life</p>
+          <p class="book-author">St. Francis de Sales</p>
+          <p class="book-desc">The classic guide to holiness in ordinary life — for men who want to go deeper without leaving the world.</p>
+        </div>
+        <span class="book-tag">Spiritual</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PRAYER -->
+  <section class="panel light">
+    <div class="wrap">
+      <div class="kicker">A Prayer</div>
+      <h2>For men who are ready to stop being silent.</h2>
       <div class="prayer-block">
-        <p class="prayer-label">A Prayer for Men</p>
-        <h2>For those who are ready to stop being silent.</h2>
+        <p class="prayer-label">A Prayer for the Men of Where Was Adam</p>
         <p class="prayer-text">
           Lord, you made me for something.<br/>
           Not comfort. Not safety. Not to be well-liked.<br/><br/>
@@ -493,19 +567,24 @@
           I am here, Lord. Tell me what to do.<br/>
           Amen.
         </p>
-        <p class="prayer-attr">— A prayer for the men of Where Was Adam</p>
+        <p class="prayer-attr">— Where Was Adam, 2026</p>
       </div>
     </div>
+  </section>
 
-  </main>
-
-  <div class="resources-cta">
-    <p>Get the weekly challenge and new reflections delivered directly.</p>
-    <a href="join.html" class="btn">Join the Brotherhood</a>
+  <div class="callout">
+    <div class="wrap">
+      <h2>Get the weekly challenge and new reflections delivered directly.</h2>
+      <p>Join the brotherhood and stay in the work.</p>
+      <a href="join.html" class="btn">Join the Brotherhood</a>
+    </div>
   </div>
 
   <footer>
-    <p>© 2026 Where Was Adam &nbsp;·&nbsp; <a href="series.html">The Series</a> &nbsp;·&nbsp; <a href="resources.html">Resources</a> &nbsp;·&nbsp; <a href="join.html">Join</a></p>
+    <div class="wrap">
+      <div class="mark">Where Was Adam</div>
+      <p>© 2026 Where Was Adam &nbsp;·&nbsp; <a href="series.html">The Series</a> &nbsp;·&nbsp; <a href="resources.html">Resources</a> &nbsp;·&nbsp; <a href="join.html">Join</a></p>
+    </div>
   </footer>
 
 </body>
