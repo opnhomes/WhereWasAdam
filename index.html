@@ -481,8 +481,8 @@
       <div class="kicker" style="color: var(--rust); margin-bottom: 16px;">Stay in It</div>
       <h2>Get the reflections. Do the work.</h2>
       <p>New writing, challenges, and resources sent directly to you. No filler.</p>
-      <form class="email-form" action="https://app.kit.com/forms/9712089/subscriptions" method="post" data-sv-form="9712089" data-uid="a515efddce" data-format="inline" data-version="5">
-        <input type="email" name="email_address" placeholder="Your email address" required />
+      <form class="email-form" id="home-form">
+        <input type="email" id="home-email" placeholder="Your email address" required />
         <button type="submit" class="btn">I'm In</button>
       </form>
       <p class="form-note">No spam. Unsubscribe anytime.</p>
@@ -496,6 +496,32 @@
     </div>
   </footer>
 
-  <script async src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+  <script>
+    document.getElementById('home-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var email = document.getElementById('home-email').value;
+      var btn = this.querySelector('button[type="submit"]');
+      btn.textContent = 'Signing you up…';
+      btn.disabled = true;
+      fetch('https://api.convertkit.com/v3/forms/9712089/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ api_key: 'yzN2DwH9CvvAJVzNvDRaiQ', email: email })
+      })
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        if (data.subscription) {
+          window.location.href = 'thank-you.html';
+        } else {
+          btn.textContent = 'Something went wrong — try again';
+          btn.disabled = false;
+        }
+      })
+      .catch(function() {
+        btn.textContent = 'Something went wrong — try again';
+        btn.disabled = false;
+      });
+    });
+  </script>
 </body>
 </html>
