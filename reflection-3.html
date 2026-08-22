@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Weight of the Word — Where Was Adam?</title>
-<meta name="description" content="Fatherhood is a vocation — a call to image God the Father in the life of a child. A reflection on presence, blessing, and closing the gap.">
+<title>You're Still the Man She Married — Where Was Adam?</title>
+<meta name="description" content="On the vow that was spoken once and has to be lived daily — Tobit, Ephesians, and the shape of self-gift in marriage.">
 <meta name="theme-color" content="#17140f">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -123,7 +123,7 @@
     max-width: 500px;
   }
 
-  /* BODY CONTENT */
+  /* BODY */
   .reflection-body {
     padding: 80px 0 60px;
   }
@@ -142,7 +142,7 @@
     line-height: 1.2;
   }
 
-  /* SCRIPTURE PULL */
+  /* SCRIPTURE */
   .verse {
     margin: 2.5rem 0;
     padding-left: 22px;
@@ -164,101 +164,55 @@
     opacity: 0.6;
   }
 
-  /* EMPHASIS */
+  /* KEY LINE PULL */
   .key-line {
     font-family: 'Fraunces', serif;
-    font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
     color: var(--cream);
-    line-height: 1.5;
+    line-height: 1.55;
     margin: 2.5rem 0;
     padding: 1.5rem 0;
     border-top: 1px solid rgba(198,154,63,0.2);
     border-bottom: 1px solid rgba(198,154,63,0.2);
   }
 
-  /* THREE GAPS */
-  .gap-item {
-    margin: 2rem 0;
-    padding-left: 22px;
-    border-left: 3px solid rgba(198,154,63,0.3);
-  }
-
-  .gap-item .gap-label {
-    font-size: 0.72rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: var(--gold);
-    margin-bottom: 8px;
-  }
-
-  .gap-item h3 {
-    font-family: 'Fraunces', serif;
-    font-size: 1.15rem;
-    color: var(--cream);
-    margin-bottom: 10px;
-    font-weight: 600;
-  }
-
-  .gap-item p {
-    margin-bottom: 0 !important;
-  }
-
-  /* BLESSING BOX */
-  .blessing-box {
-    background: var(--charcoal-2);
-    border: 1px solid rgba(198,154,63,0.25);
-    padding: 32px 36px;
-    margin: 2.5rem 0;
-  }
-
-  .blessing-box .blessing-label {
-    font-size: 0.72rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: var(--gold);
-    margin-bottom: 16px;
-  }
-
-  .blessing-box p {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 1.1rem;
-    color: var(--cream) !important;
-    line-height: 1.7;
-    margin-bottom: 0 !important;
-  }
-
-  /* REFLECTION BOX */
+  /* FOR REFLECTION BOX */
   .reflection-box {
     background: var(--charcoal-2);
-    border: 1px solid rgba(198,154,63,0.25);
-    padding: 36px;
+    border: 1px solid rgba(198,154,63,0.2);
+    padding: 2rem 2rem 2rem 2.25rem;
     margin: 3rem 0;
   }
 
-  .reflection-box .box-label {
-    font-size: 0.72rem;
+  .reflection-box-label {
+    font-size: 11px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     font-weight: 600;
-    color: var(--gold);
-    margin-bottom: 20px;
+    color: var(--rust);
+    margin-bottom: 1.25rem;
   }
 
-  .reflection-box ol {
-    padding-left: 20px;
+  .reflection-box ul {
+    list-style: none;
+    padding: 0;
   }
 
-  .reflection-box ol li {
+  .reflection-box li {
     font-size: 1rem;
     color: var(--cream-2);
-    line-height: 1.75;
-    margin-bottom: 14px;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(198,154,63,0.1);
+    line-height: 1.65;
   }
 
-  .reflection-box ol li:last-child { margin-bottom: 0; }
+  .reflection-box li:last-child { border-bottom: none; }
+
+  .reflection-box li::before {
+    content: '—';
+    color: var(--gold);
+    margin-right: 10px;
+  }
 
   /* CLOSING */
   .closing-line {
@@ -270,19 +224,19 @@
     margin-bottom: 0;
   }
 
-  /* QUOTE */
-  .attribution-quote {
-    margin: 3rem 0 1rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(198,154,63,0.15);
+  /* AUGUSTINE CLOSE */
+  .augustine {
+    margin-top: 2.5rem;
+    padding-left: 22px;
+    border-left: 3px solid rgba(198,154,63,0.4);
     font-family: 'Fraunces', serif;
     font-style: italic;
     font-size: 1rem;
-    color: rgba(244,236,221,0.55);
-    line-height: 1.7;
+    color: var(--cream-2);
+    opacity: 0.8;
   }
 
-  .attribution-quote cite {
+  .augustine cite {
     display: block;
     margin-top: 8px;
     font-family: 'Inter', sans-serif;
@@ -290,7 +244,7 @@
     font-size: 0.78rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    opacity: 0.7;
+    opacity: 0.6;
   }
 
   /* SERIES NAV */
@@ -319,9 +273,7 @@
 
   .series-nav-back a:hover { color: var(--gold); }
 
-  .series-nav-next {
-    text-align: right;
-  }
+  .series-nav-next { text-align: right; }
 
   .series-nav-next .next-label {
     font-size: 0.7rem;
@@ -404,8 +356,16 @@
     .series-nav-next { text-align: left; }
     .nav-links { gap: 1.25rem; }
     .nav-links a { font-size: 0.7rem; }
-    .blessing-box { padding: 24px 22px; }
-    .reflection-box { padding: 28px 22px; }
+  }
+
+  .week-dates {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: rgba(244,236,221,0.45);
+    margin-top: -8px;
+    margin-bottom: 24px;
   }
 </style>
 </head>
@@ -422,142 +382,49 @@
 
   <div class="page-hero">
     <div class="wrap">
-      <p class="series-tag">The Gap &nbsp;·&nbsp; Part III &nbsp;·&nbsp; Fatherhood</p>
-      <h1>The Weight of the Word</h1>
-      <p class="subtitle">On the gap in fatherhood — physical, emotional, and spiritual — and the blessing that closes it.</p>
+      <p class="series-tag">The Gap &nbsp;·&nbsp; Part III &nbsp;·&nbsp; Marriage</p>
+      <p class="week-dates">Week 3 &nbsp;—&nbsp; Oct 25–31</p>
+      <h1>You're Still the Man She Married</h1>
+      <p class="subtitle">On the vow that was spoken once, and has to be lived daily.</p>
     </div>
   </div>
 
   <div class="reflection-body">
     <div class="wrap">
 
-      <p>There is no word in the human language more loaded with expectation than <em>father</em>.</p>
-
-      <p>It carries everything. Protection. Provision. Presence. Blessing. Discipline. Tenderness. Legacy. And for too many men — shame. Because somewhere between the man they intended to be and the man they became, a gap opened up. And their children are living in it.</p>
-
-      <p>This reflection is not an accusation. It is an invitation.</p>
-
-      <p>God is still asking — <em>Where are you?</em></p>
-
-      <h2>The Father Wound</h2>
-
-      <p>Before a man can become the father his children need, he usually has to reckon with the father he had — or didn't have.</p>
-
-      <p>Research consistently shows that father absence is one of the most powerful predictors of nearly every social pathology — addiction, incarceration, teen pregnancy, anxiety, depression, and loss of faith. But the statistics only measure what can be counted. They cannot measure the quiet wound carried by a son whose father was home every night but never really there — never present, never affirming, never willing to speak into his son's life with love and authority.</p>
-
-      <p>The father wound is real. And it is generational. Wounded sons become wounded fathers unless something intervenes.</p>
-
-      <p>That something is grace.</p>
-
-      <h2>What God the Father Reveals</h2>
-
-      <p>The starting point for Catholic fatherhood is not a parenting strategy. It is a theological truth: human fatherhood is a participation in divine fatherhood.</p>
-
       <div class="verse">
-        "I kneel before the Father, from whom every family in heaven and on earth is named."
-        <cite>Ephesians 3:14–15</cite>
+        "Husbands, love your wives, as Christ loved the church and gave himself up for her."
+        <cite>Ephesians 5:25</cite>
       </div>
 
-      <p>Every family. Every father. Every act of fatherly love — however imperfect — is meant to be a visible sign of the invisible love of God the Father. A child's first understanding of God is mediated through his or her earthly father. This is not sentiment. This is theology.</p>
+      <p>We married her to love her — fully, sacrificially, the way Christ loved the Church. That calling didn't expire at the reception. This is about what it looks like to show up for our wives, each day, week, month, and year, no matter the cost. This is our vocation.</p>
 
-      <p>Which means the stakes could not be higher.</p>
+      <h2>We already know how to speak. The question is whether we will.</h2>
 
-      <p>When a father is absent — physically or spiritually — he does not just leave a hole in the family. He leaves a distorted image of God in the heart of his child. A child whose father was cold, distant, harsh, or absent will struggle to believe that God the Father is warm, present, tender, and trustworthy.</p>
+      <p>Adam wasn't mute. The first words recorded from any man in Scripture are about his wife: <em>"bone of my bones, and flesh of my flesh"</em> (Genesis 2:23) — a man overjoyed, a man who spoke up. The tragedy of Genesis 3 isn't that Adam never had words for her. It's that he had them once, and then, at the one moment they were most needed, he went quiet instead. That's the danger in marriage specifically: not that we never speak the vow, but that we stop speaking — engaging, leading, protecting — once the wedding is behind us and the routine sets in.</p>
 
-      <div class="key-line">
-        The gap in fatherhood is a gap in the image of God.
+      <h2>Tobias didn't go silent on his wedding night</h2>
+
+      <p>Tobit gives us the opposite move, in almost the same setting Adam failed in — a bridal chamber, a new wife, a moment charged with everything a marriage will become. But the story is bigger than a single prayer. Sarah had already lost seven husbands, each one killed on their wedding night by the demon Asmodeus (Tobit 3:8) — she wasn't just a bride, she was a woman guarded by real danger, in a moment that had already proven fatal to every man before Tobias. He doesn't walk in unaware or unprepared. Following the angel Raphael's instruction, Tobias burns the heart and liver of a fish on the wedding night — a deliberate, physical act of protection — and the demon flees, is pursued, and is bound (Tobit 8:1–3). Adam, when the danger came for Eve, did nothing. Tobias, when the danger came for Sarah, acted first, protected her, and only then went to her.</p>
+
+      <p>And even then, he doesn't treat her as something to use. Before anything else, he calls her <em>"sister"</em> (Tobit 8:4) — the word itself is restraint, a refusal to reduce her to what the moment could have been about. Then he takes her hand, and prays with her, out loud, naming what marriage is actually for — going back to Eden itself, to God giving Eve to Adam as a companion, not an object (Tobit 8:6). He asks God's protection over their life together, not because of lust, but for a true and faithful union (Tobit 8:7). Only after the danger was faced, and the woman was honored, and the prayer was prayed — only then does the marriage become what it's for. Where Adam went silent in a garden and let the danger reach her unopposed, Tobias acts, protects, honors, and prays in a bedroom — the same category of moment, the opposite result on every count.</p>
+
+      <h2>Our bodies were made to say something too</h2>
+
+      <p>St. John Paul II spent years unpacking a single insight in his Theology of the Body: our bodies aren't just biological facts, they carry meaning — what he called their "nuptial" or spousal meaning. A husband's body isn't built for taking; it's built for total, faithful, fruitful self-gift, the same shape as Christ's gift of Himself on the Cross. That's not abstract theology — it's the direct explanation of why Ephesians 5:25 uses the Cross as the measuring stick for marital love.</p>
+
+      <p>Christ didn't love the Church in theory. He gave His body. Not because our marriages will ever be asked for that scale of sacrifice — but because they're asked for that same shape of it: total, not held back. Most days that's not a cross. It's the apology we don't want to give. The hard conversation we'd rather avoid. Presence on the night we'd rather disappear into a screen.</p>
+
+      <h2>So — are we still the man she married?</h2>
+
+      <p>Not "did we mean the vow" — of course we did. The question is whether love is still costing us something, or whether it's quietly become comfortable, transactional, withheld. Where in our marriage have we gone as silent as Adam did, when what she actually needs is a man who prays over her like Tobias and gives himself for her like Christ?</p>
+
+      <p class="closing-line"><strong>Where Are You?</strong></p>
+
+      <div class="augustine">
+        "You have made us for yourself, O Lord, and our hearts are restless until they rest in you."
+        <cite>St. Augustine, Confessions</cite>
       </div>
-
-      <h2>The Model: St. Joseph</h2>
-
-      <p>There is no better model for Catholic fatherhood than St. Joseph — and no figure more misunderstood.</p>
-
-      <p>Joseph is often presented as a passive bystander — the quiet man in the corner of the nativity scene. Nothing could be further from the truth.</p>
-
-      <p>Joseph was a man of radical obedience and decisive action. When the angel spoke, Joseph moved — immediately. He took Mary as his wife. He fled to Egypt in the middle of the night to protect his family. He provided, protected, and led — all in faithful silence, without a single recorded word in all of Scripture.</p>
-
-      <p>Joseph did not need to speak loudly. His life spoke.</p>
-
-      <p>He was present. He was trustworthy. He was strong. And he ordered every ounce of that strength toward the protection and flourishing of the family God had entrusted to him.</p>
-
-      <p>That is the template. Not perfection — Joseph was not the biological father of Jesus — but faithful presence ordered toward the good of the child.</p>
-
-      <h2>The Three Gaps in Fatherhood</h2>
-
-      <p>There are three specific ways men abdicate their role as fathers — and all three echo Adam's silence in the garden.</p>
-
-      <div class="gap-item">
-        <p class="gap-label">Gap One</p>
-        <h3>Physical Absence</h3>
-        <p>Some men simply are not there. Divorce, work, distraction, addiction — whatever the cause, the effect is the same. A child grows up looking for a father and finding an empty chair.</p>
-      </div>
-
-      <div class="gap-item">
-        <p class="gap-label">Gap Two</p>
-        <h3>Emotional Absence</h3>
-        <p>Perhaps the more common gap today. The father is home. He is at the dinner table. He coaches the soccer team. But he has never told his son he is proud of him. He has never sat with his daughter in her pain. He has never spoken a word of blessing over his children's lives. He provides — but he does not give himself.</p>
-      </div>
-
-      <div class="gap-item">
-        <p class="gap-label">Gap Three</p>
-        <h3>Spiritual Absence</h3>
-        <p>This is the deepest gap of all — and the least discussed. A father who does not lead his family in prayer, who does not bring his children to Mass, who does not speak the name of God in his home, has left his family spiritually defenseless. He has handed the formation of his children's souls to the culture — and the culture has very different plans for them.</p>
-      </div>
-
-      <h2>The Blessing That Changes Everything</h2>
-
-      <p>In the Old Testament, a father's blessing was not a formality. It was a spiritual act of transmission — the passing of identity, destiny, and grace from one generation to the next. Isaac blessed Jacob. Jacob blessed his twelve sons. The blessing of a father carried the weight of covenant.</p>
-
-      <p>That power has not disappeared. It has simply been forgotten.</p>
-
-      <p>There is something a father can give his child that no coach, teacher, therapist, or mentor can replicate — the spoken blessing of a father who sees his child, knows his child, and declares his child beloved.</p>
-
-      <p>If you have never blessed your children — spoken over them with love, laid hands on them, told them who they are in God's eyes — that is where closing the gap begins. Not with a program. Not with a promise to be home more. With a word. Tonight. At the dinner table or at the bedside.</p>
-
-      <div class="blessing-box">
-        <p class="blessing-label">A Father's Blessing</p>
-        <p>"You are my son. You are my daughter. I am proud of you. I love you. And God has great plans for your life."</p>
-      </div>
-
-      <p>Those words cost nothing. They are worth everything.</p>
-
-      <h2>The Prodigal Father</h2>
-
-      <p>The most famous parable in all of Scripture is usually called the Parable of the Prodigal Son. But read it again carefully — and notice who the real subject is.</p>
-
-      <p>It is the father.</p>
-
-      <p>He sees his son while he is still a long way off. He runs. He throws his arms around him. He calls for the robe, the ring, the feast. He does not wait for the son to clean himself up. He does not deliver a lecture. He restores him — fully, immediately, extravagantly.</p>
-
-      <p>That is the Father God is calling every man to become.</p>
-
-      <p>Not a perfect father. Not a father who never fails. But a father who runs — who refuses to let the gap be the final word — who gets up and closes the distance no matter what it costs.</p>
-
-      <h2>Closing the Gap</h2>
-
-      <p>Fatherhood is not a role. It is a vocation — a specific call from God to image His own fatherly love in the life of a child.</p>
-
-      <p>The gap closes one day at a time. One conversation at a time. One bedtime prayer at a time. One honest apology at a time. One blessing spoken over a child's life at a time.</p>
-
-      <p>Adam was silent when he should have spoken. Joseph spoke — through action, through presence, through sacrifice — and the Word of God grew up under his roof.</p>
-
-      <p>The question is the same for every father today:</p>
-
-      <p class="closing-line">Will you be Adam — or will you be Joseph?</p>
-
-      <div class="reflection-box">
-        <p class="box-label">For Reflection</p>
-        <ol>
-          <li>What kind of image of God the Father are your children receiving through you?</li>
-          <li>Is there a blessing you have never spoken over your child that needs to be spoken?</li>
-          <li>Where is the gap in your fatherhood — physical, emotional, or spiritual?</li>
-        </ol>
-      </div>
-
-      <blockquote class="attribution-quote">
-        "The greatest thing a father can do for his children is to love their mother."
-        <cite>— Theodore Hesburgh</cite>
-      </blockquote>
 
     </div>
   </div>
@@ -565,11 +432,11 @@
   <div class="series-nav">
     <div class="wrap">
       <div class="series-nav-back">
-        <a href="reflection-2.html">← The Man She Married Is Still in There</a>
+        <a href="series.html">← Back to The Series</a>
       </div>
       <div class="series-nav-next">
         <p class="next-label">Next in The Gap</p>
-        <a href="series.html">Men Without Brothers →</a>
+        <a href="reflection-4.html">The Weight of the Word →</a>
       </div>
     </div>
   </div>
