@@ -6,12 +6,14 @@
 <title>Where Was Adam?</title>
 <meta name="description" content="He was there. He said nothing. It's time to show up.">
 
+<!-- Favicon -->
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="shortcut icon" href="favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta name="theme-color" content="#17140f">
 
+<!-- Social / link-preview sharing -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://wherewasadam.org/">
 <meta property="og:title" content="Where Was Adam?">
@@ -38,7 +40,6 @@
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -49,7 +50,7 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, .display {
+  h1, h2, h3, .display {
     font-family: 'Fraunces', serif;
     font-weight: 600;
     letter-spacing: -0.01em;
@@ -57,11 +58,7 @@
 
   a { color: inherit; }
 
-  .wrap {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 0 28px;
-  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 28px; }
 
   /* NAV */
   nav {
@@ -86,14 +83,9 @@
     letter-spacing: 0.02em;
   }
 
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
 
   .nav-links a {
-    font-family: 'Inter', sans-serif;
     font-size: 0.78rem;
     font-weight: 500;
     letter-spacing: 0.14em;
@@ -104,7 +96,7 @@
     transition: opacity 0.2s, color 0.2s;
   }
 
-  .nav-links a:hover { opacity: 1; color: var(--gold); }
+  .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--gold); }
 
   /* HERO */
   .hero {
@@ -114,7 +106,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 80px 28px;
+    padding: 110px 28px 80px;
     position: relative;
     background:
       radial-gradient(ellipse 90% 60% at 50% 0%, rgba(185,85,47,0.16), transparent 60%),
@@ -131,29 +123,17 @@
     font-weight: 500;
   }
 
-  .hero h1 {
-    font-size: clamp(2.6rem, 7vw, 4.6rem);
-    line-height: 1.05;
-    color: var(--cream);
-  }
-
-  .hero h1 em {
-    font-style: italic;
-    color: var(--rust);
-  }
+  .hero h1 { font-size: clamp(2.6rem, 7vw, 4.6rem); line-height: 1.05; color: var(--cream); }
+  .hero h1 em { font-style: italic; color: var(--rust); }
 
   .tagline {
     margin-top: 26px;
     font-size: clamp(1.05rem, 2.4vw, 1.3rem);
     color: var(--cream-2);
     max-width: 480px;
-    font-weight: 400;
   }
 
-  .tagline strong {
-    color: var(--gold);
-    font-weight: 600;
-  }
+  .tagline strong { color: var(--gold); font-weight: 600; }
 
   .scroll-cue {
     position: absolute;
@@ -165,17 +145,9 @@
   }
 
   /* SECTIONS */
-  section.panel {
-    padding: 96px 0;
-  }
-
+  section.panel { padding: 96px 0; }
   .panel.dark { background: var(--charcoal); }
-
-  .panel.light {
-    background: var(--cream);
-    color: var(--ink);
-  }
-
+  .panel.light { background: var(--cream); color: var(--ink); }
   .panel.light h2 { color: var(--rust-dark); }
   .panel.dark h2 { color: var(--gold); }
 
@@ -185,22 +157,12 @@
     text-transform: uppercase;
     font-weight: 600;
     margin-bottom: 18px;
+    color: var(--rust);
   }
 
-  .panel.light .kicker { color: var(--rust); }
-  .panel.dark .kicker { color: var(--rust); }
+  h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); margin-bottom: 26px; line-height: 1.2; }
 
-  h2 {
-    font-size: clamp(1.7rem, 4vw, 2.3rem);
-    margin-bottom: 26px;
-    line-height: 1.2;
-  }
-
-  .panel p {
-    font-size: 1.08rem;
-    margin-bottom: 20px;
-  }
-
+  .panel p { font-size: 1.08rem; margin-bottom: 20px; }
   .panel.light p { color: #40382c; }
   .panel.dark p { color: var(--cream-2); }
 
@@ -227,181 +189,47 @@
     opacity: 0.7;
   }
 
-  /* THREE PATHS */
-  .path-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.25rem;
-    margin-top: 36px;
-  }
-
-  .path-card {
-    border: 1px solid rgba(198,154,63,0.25);
-    padding: 1.75rem;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    transition: border-color 0.2s, background 0.2s;
-  }
-
-  .path-card:hover {
-    border-color: var(--gold);
-    background: rgba(198,154,63,0.05);
-  }
-
-  .path-num {
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--rust);
-    font-weight: 600;
-    white-space: nowrap;
-    margin-bottom: 10px;
-  }
-
-  .path-card h3 {
-    font-family: 'Fraunces', serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--gold);
-    margin-bottom: 8px;
-  }
-
-  .path-card p {
-    font-size: 0.9rem !important;
-    color: var(--cream-2) !important;
-    line-height: 1.55;
-    margin-bottom: 0 !important;
-  }
-
-  /* EMAIL CAPTURE */
-  .email-panel {
-    background: var(--charcoal-2);
-    padding: 90px 0;
-    text-align: center;
-    border-top: 1px solid rgba(198,154,63,0.15);
-    border-bottom: 1px solid rgba(198,154,63,0.15);
-  }
-
-  .email-panel .wrap { max-width: 560px; }
-
-  .email-panel h2 {
-    color: var(--cream);
-    font-size: clamp(1.6rem, 4vw, 2.2rem);
-    margin-bottom: 14px;
-  }
-
-  .email-panel p {
-    color: rgba(244,236,221,0.7);
-    font-size: 1rem;
-    margin-bottom: 32px;
-  }
-
-  .email-form {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .email-form input[type="email"] {
-    flex: 1 1 240px;
-    padding: 13px 16px;
-    background: rgba(244,236,221,0.06);
-    border: 1px solid rgba(198,154,63,0.3);
-    color: var(--cream);
-    font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    outline: none;
-    transition: border-color 0.2s;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  .email-form input[type="email"]:focus { border-color: var(--gold); }
-  .email-form input[type="email"]::placeholder { color: rgba(244,236,221,0.35); }
-
+  /* BUTTONS */
   .btn {
     display: inline-block;
     padding: 13px 26px;
-    background: var(--rust);
-    color: var(--cream);
-    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--rust-dark);
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     text-decoration: none;
-    border: none;
-    cursor: pointer;
+    border: 2px solid var(--cream);
     transition: background 0.2s;
-    -webkit-font-smoothing: antialiased;
   }
+  .btn:hover { background: var(--cream-2); }
+  .btn.outline { background: transparent; color: var(--cream); }
+  .btn.outline:hover { background: rgba(244,236,221,0.1); }
+  .btn.rust { background: var(--rust); border-color: var(--rust); color: var(--cream); }
+  .btn.rust:hover { background: var(--rust-dark); border-color: var(--rust-dark); }
+  .btns { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px; }
 
-  .btn:hover { background: var(--rust-dark); }
-
-  .form-note {
-    margin-top: 14px;
-    font-size: 0.78rem;
-    color: rgba(244,236,221,0.35);
-  }
-
-  /* CALL-OUT BLOCK */
-  .callout {
-    background: var(--rust);
-    color: var(--cream);
-    padding: 90px 0;
-    text-align: center;
-  }
-
+  /* CALLOUT */
+  .callout { background: var(--rust); color: var(--cream); padding: 90px 0; text-align: center; }
   .callout .wrap { max-width: 640px; }
-
-  .callout h2 {
-    color: var(--cream);
-    font-size: clamp(1.8rem, 4.5vw, 2.5rem);
-  }
-
-  .callout p {
-    color: rgba(244,236,221,0.9);
-    font-size: 1.1rem;
-  }
+  .callout h2 { color: var(--cream); font-size: clamp(1.8rem, 4.5vw, 2.5rem); }
+  .callout p { color: rgba(244,236,221,0.9); font-size: 1.1rem; margin-bottom: 28px; }
+  .callout .btns { justify-content: center; }
 
   /* FOOTER */
-  footer {
-    background: var(--charcoal-2);
-    padding: 56px 0 40px;
-    text-align: center;
-    border-top: 1px solid rgba(198,154,63,0.15);
-  }
-
-  footer .mark {
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: var(--gold);
-    margin-bottom: 10px;
-  }
-
-  footer p {
-    font-size: 0.85rem;
-    color: rgba(244,236,221,0.45);
-  }
-
-  footer a {
-    color: rgba(244,236,221,0.45);
-    text-decoration: none;
-  }
-
+  footer { background: var(--charcoal-2); padding: 56px 0 40px; text-align: center; border-top: 1px solid rgba(198,154,63,0.15); }
+  footer .mark { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.1rem; color: var(--gold); margin-bottom: 10px; }
+  footer p { font-size: 0.85rem; color: rgba(244,236,221,0.45); }
+  footer a { color: rgba(244,236,221,0.45); text-decoration: none; }
   footer a:hover { color: var(--gold); }
 
-  @media (max-width: 560px) {
+  @media (max-width: 640px) {
     section.panel { padding: 72px 0; }
     .callout { padding: 64px 0; }
-    .email-panel { padding: 64px 0; }
-    .nav-links { gap: 1.25rem; }
-    .nav-links a { font-size: 0.7rem; }
-    .email-form { flex-direction: column; }
-    .email-form input[type="email"] { flex: 1 1 auto; }
-    .btn { width: 100%; text-align: center; }
+    .nav-links { gap: 1rem; }
+    .nav-links a { font-size: 0.66rem; letter-spacing: 0.1em; }
+    .nav-brand { font-size: 0.85rem; }
   }
 </style>
 </head>
@@ -411,6 +239,7 @@
     <a href="index.html" class="nav-brand">Where Was Adam</a>
     <ul class="nav-links">
       <li><a href="series.html">The Series</a></li>
+      <li><a href="mary-magdalene.html">Apostolate</a></li>
       <li><a href="resources.html">Resources</a></li>
       <li><a href="join.html">Join</a></li>
     </ul>
@@ -427,8 +256,15 @@
     <div class="wrap">
       <div class="kicker">The Question</div>
       <h2>We skip past one detail in the oldest story we know.</h2>
-      <p>When the serpent came for Eve, Adam wasn't away tending some distant field. Scripture is plain about it: he was already standing beside her. Present. Watching. Silent.</p>
-      <p>The first attack on the family God had just made didn't happen while the man was absent. It happened while he stood right there and said nothing.</p>
+      <p>
+        When the serpent came for Eve, Adam wasn't away tending some distant field.
+        Scripture is plain about it: he was already standing beside her. Present.
+        Watching. Silent.
+      </p>
+      <p>
+        The first attack on the family God had just made didn't happen while the man
+        was absent. It happened while he stood right there and said nothing.
+      </p>
       <div class="verse">
         "She also gave some to her husband, who was with her, and he ate."
         <cite>Genesis 3:6</cite>
@@ -440,88 +276,68 @@
     <div class="wrap">
       <div class="kicker">The Point</div>
       <h2>This isn't a story about blame. It's a question about presence.</h2>
-      <p>Every man since Eden has inherited the same post Adam was given and the same silence he fell into. In a marriage, a family, a friendship, a parish, a workplace — there is always a moment that calls for a man to step in, speak up, or simply stand where he said he would stand.</p>
-      <p>Most of the damage done in this world isn't done by monsters. It's done in the gap left by good men who were there, and said nothing.</p>
+      <p>
+        Every man since Eden has inherited the same post Adam was given and the same
+        silence he fell into. In a marriage, a family, a friendship, a parish, a
+        workplace — there is always a moment that calls for a man to step in, speak up,
+        or simply stand where he said he would stand.
+      </p>
+      <p>
+        Most of the damage done in this world isn't done by monsters. It's done in the
+        gap left by good men who were there, and said nothing.
+      </p>
     </div>
   </section>
 
-  <section class="panel dark" style="padding-top: 0;">
+  <section class="panel light">
     <div class="wrap">
-      <div class="kicker">What's Here</div>
-      <h2>Three ways to close the gap.</h2>
-      <div class="path-grid">
-        <a href="series.html" class="path-card">
-          <p class="path-num">01 — The Series</p>
-          <h3>The Gap</h3>
-          <p>Nine reflections on where men are called to show up — no longer standing in silence.</p>
-        </a>
-        <a href="resources.html" class="path-card">
-          <p class="path-num">02 — Resources</p>
-          <h3>Tools for the Work</h3>
-          <p>Scripture, books, and a weekly challenge to help you show up where it matters most.</p>
-        </a>
-        <a href="join.html" class="path-card">
-          <p class="path-num">03 — Community</p>
-          <h3>The Brotherhood</h3>
-          <p>Receive reflections, challenges, and updates as this project grows. No noise — just signal.</p>
-        </a>
+      <div class="kicker">The Series</div>
+      <h2>The Gap</h2>
+      <p>
+        Nine reflections on where men are called to show up: identity, the interior
+        life, marriage, fatherhood, faith, friendship, and work. Each one ends in the
+        same place, with a man finally willing to stand in the gap.
+      </p>
+      <div class="btns">
+        <a class="btn rust" href="series.html">Read the Series</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel dark">
+    <div class="wrap">
+      <div class="kicker">The Apostolate</div>
+      <h2>Show up in prayer.</h2>
+      <p>
+        The Mary Magdalene Apostolate keeps watch in prayer for the women exploited in
+        the sex trade, for the men who buy, and for those who profit. Adam stood by.
+        Mary Magdalene stayed at the cross.
+      </p>
+      <div class="btns">
+        <a class="btn outline" href="mary-magdalene.html">The Mary Magdalene Apostolate</a>
       </div>
     </div>
   </section>
 
   <section class="callout">
     <div class="wrap">
-      <h2>Where was Adam? That's the easy question. The harder one is where are you?</h2>
-      <p>Adam's silence is the setup. Your response is the story. This project is built for men ready to close the gap — in their marriages, their homes, and their faith.</p>
+      <h2>So the question isn't where Adam was. It's where you are right now.</h2>
+      <p>
+        Join the brotherhood and receive new writing, weekly challenges, and resources
+        as they're published.
+      </p>
+      <div class="btns">
+        <a class="btn" href="join.html">Join the Brotherhood</a>
+      </div>
     </div>
   </section>
-
-  <div class="email-panel">
-    <div class="wrap">
-      <div class="kicker" style="color: var(--rust); margin-bottom: 16px;">Stay in It</div>
-      <h2>Get the reflections. Do the work.</h2>
-      <p>New writing, challenges, and resources sent directly to you. No filler.</p>
-      <form class="email-form" id="home-form">
-        <input type="email" id="home-email" placeholder="Your email address" required />
-        <button type="submit" class="btn">I'm In</button>
-      </form>
-      <p class="form-note">No spam. Unsubscribe anytime.</p>
-    </div>
-  </div>
 
   <footer>
     <div class="wrap">
       <div class="mark">Where Was Adam</div>
-      <p>© 2026 Where Was Adam &nbsp;·&nbsp; <a href="series.html">The Series</a> &nbsp;·&nbsp; <a href="resources.html">Resources</a> &nbsp;·&nbsp; <a href="join.html">Join</a></p>
+      <p>© 2026 Where Was Adam &nbsp;·&nbsp; <a href="series.html">The Series</a> &nbsp;·&nbsp; <a href="mary-magdalene.html">Apostolate</a> &nbsp;·&nbsp; <a href="resources.html">Resources</a> &nbsp;·&nbsp; <a href="join.html">Join</a></p>
     </div>
   </footer>
 
-  <script>
-    document.getElementById('home-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      var email = document.getElementById('home-email').value;
-      var btn = this.querySelector('button[type="submit"]');
-      btn.textContent = 'Signing you up…';
-      btn.disabled = true;
-      fetch('https://api.convertkit.com/v3/forms/9712089/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ api_key: 'yzN2DwH9CvvAJVzNvDRaiQ', email: email })
-      })
-      .then(function(r) { return r.json(); })
-      .then(function(data) {
-        if (data.subscription) {
-          window.location.href = 'thank-you.html';
-        } else {
-          btn.textContent = 'Something went wrong — try again';
-          btn.disabled = false;
-        }
-      })
-      .catch(function() {
-        btn.textContent = 'Something went wrong — try again';
-        btn.disabled = false;
-      });
-    });
-  </script>
 </body>
 </html>

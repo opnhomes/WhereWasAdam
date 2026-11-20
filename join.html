@@ -4,283 +4,48 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Join — Where Was Adam?</title>
-<meta name="description" content="Join the brotherhood. Receive reflections, challenges, and resources for men who are ready to show up.">
+<meta name="description" content="The brotherhood is coming soon.">
 <meta name="theme-color" content="#17140f">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --charcoal: #17140f;
-    --charcoal-2: #1f1b14;
-    --cream: #f4ecdd;
-    --cream-2: #ece1cd;
-    --rust: #b9552f;
-    --rust-dark: #8f3f22;
-    --gold: #c69a3f;
-    --ink: #23201a;
+    --charcoal: #17140f; --charcoal-2: #1f1b14; --cream: #f4ecdd; --cream-2: #ece1cd;
+    --rust: #b9552f; --rust-dark: #8f3f22; --gold: #c69a3f;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Inter', sans-serif;
-    background: var(--charcoal);
-    color: var(--cream);
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  h1, h2, h3 {
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-  }
-
+  body { font-family: 'Inter', sans-serif; background: var(--charcoal); color: var(--cream); line-height: 1.65; -webkit-font-smoothing: antialiased; min-height: 100vh; display: flex; flex-direction: column; }
+  h1 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
   a { color: inherit; }
 
-  .wrap {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 0 28px;
-  }
-
-  /* NAV */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 28px;
-    background: rgba(23,20,15,0.93);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(198,154,63,0.15);
-  }
-
-  .nav-brand {
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: 0.95rem;
-    color: var(--gold);
-    text-decoration: none;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
-
-  .nav-links a {
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--cream-2);
-    text-decoration: none;
-    opacity: 0.7;
-    transition: opacity 0.2s, color 0.2s;
-  }
-
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 18px 28px; background: rgba(23,20,15,0.93); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(198,154,63,0.15); }
+  .nav-brand { font-family: 'Fraunces', serif; font-weight: 600; font-size: 0.95rem; color: var(--gold); text-decoration: none; letter-spacing: 0.02em; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream-2); text-decoration: none; opacity: 0.7; transition: opacity 0.2s, color 0.2s; }
   .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--gold); }
 
-  /* PAGE HEADER */
-  .page-hero {
-    padding: 140px 28px 80px;
-    text-align: center;
-    background:
-      radial-gradient(ellipse 90% 60% at 50% 0%, rgba(185,85,47,0.16), transparent 60%),
-      var(--charcoal);
-    border-bottom: 1px solid rgba(198,154,63,0.18);
-  }
+  .page-hero { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 140px 28px 80px; background: radial-gradient(ellipse 90% 60% at 50% 0%, rgba(185,85,47,0.16), transparent 60%), var(--charcoal); }
+  .eyebrow { font-size: 13px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 22px; font-weight: 500; }
+  .page-hero h1 { font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.05; margin-bottom: 18px; }
+  .page-hero p { font-size: clamp(1rem, 2.2vw, 1.2rem); color: var(--cream-2); max-width: 480px; opacity: 0.85; margin-bottom: 30px; }
+  .btn { display: inline-block; padding: 13px 26px; background: var(--cream); color: var(--rust-dark); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; }
+  .btn:hover { background: var(--cream-2); }
 
-  .eyebrow {
-    font-size: 13px;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 22px;
-    font-weight: 500;
-  }
-
-  .page-hero h1 {
-    font-size: clamp(2.4rem, 6vw, 4rem);
-    line-height: 1.05;
-    color: var(--cream);
-    margin-bottom: 18px;
-  }
-
-  .page-hero p {
-    font-size: clamp(1rem, 2.2vw, 1.2rem);
-    color: var(--cream-2);
-    max-width: 520px;
-    margin: 0 auto;
-    opacity: 0.8;
-  }
-
-  /* SECTIONS */
-  section.panel { padding: 96px 0; }
-  .panel.dark { background: var(--charcoal); }
-  .panel.light { background: var(--cream); color: var(--ink); }
-  .panel.light h2, .panel.light h3 { color: var(--rust-dark); }
-  .panel.dark h2 { color: var(--gold); }
-
-  .kicker {
-    font-size: 12px;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 18px;
-    color: var(--rust);
-  }
-
-  h2 {
-    font-size: clamp(1.7rem, 4vw, 2.3rem);
-    margin-bottom: 26px;
-    line-height: 1.2;
-  }
-
-  .panel p { font-size: 1.08rem; margin-bottom: 20px; }
-  .panel.light p { color: #40382c; }
-  .panel.dark p { color: var(--cream-2); }
-
-  /* WHAT YOU GET */
-  .what-list {
-    margin: 28px 0;
-    border-left: 3px solid rgba(185,85,47,0.35);
-    padding-left: 22px;
-  }
-
-  .what-list li {
-    list-style: none;
-    padding: 8px 0;
-    font-size: 1rem;
-    color: #40382c;
-  }
-
-  .what-list li::before {
-    content: '—';
-    color: var(--rust);
-    margin-right: 10px;
-    font-weight: 600;
-  }
-
-  .verse {
-    margin-top: 40px;
-    padding-left: 22px;
-    border-left: 3px solid var(--rust);
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 1.15rem;
-    color: var(--rust-dark);
-  }
-
-  .verse cite {
-    display: block;
-    margin-top: 10px;
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-size: 0.85rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    opacity: 0.6;
-  }
-
-  /* FORM */
-  .join-form-wrap {
-    background: var(--charcoal-2);
-    border: 1px solid rgba(198,154,63,0.18);
-    padding: 40px;
-    margin-top: 8px;
-  }
-
-  .form-group {
-    margin-bottom: 18px;
-  }
-
-  .form-group label {
-    display: block;
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: var(--gold);
-    margin-bottom: 8px;
-  }
-
-  .form-group input {
-    width: 100%;
-    padding: 13px 16px;
-    background: rgba(244,236,221,0.05);
-    border: 1px solid rgba(198,154,63,0.25);
-    color: var(--cream);
-    font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    outline: none;
-    transition: border-color 0.2s;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  .form-group input:focus { border-color: var(--gold); }
-  .form-group input::placeholder { color: rgba(244,236,221,0.3); }
-
-  .btn {
-    display: block;
-    width: 100%;
-    padding: 14px;
-    background: var(--rust);
-    color: var(--cream);
-    font-family: 'Inter', sans-serif;
-    font-size: 0.82rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    border: none;
-    cursor: pointer;
-    transition: background 0.2s;
-    margin-top: 6px;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  .btn:hover { background: var(--rust-dark); }
-
-  .form-note {
-    margin-top: 14px;
-    font-size: 0.78rem;
-    color: rgba(244,236,221,0.35);
-    text-align: center;
-    line-height: 1.5;
-  }
-
-  /* FOOTER */
-  footer {
-    background: var(--charcoal-2);
-    padding: 56px 0 40px;
-    text-align: center;
-    border-top: 1px solid rgba(198,154,63,0.15);
-  }
-
-  footer .mark {
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: var(--gold);
-    margin-bottom: 10px;
-  }
-
+  footer { background: var(--charcoal-2); padding: 40px 0; text-align: center; border-top: 1px solid rgba(198,154,63,0.15); }
   footer p { font-size: 0.85rem; color: rgba(244,236,221,0.45); }
   footer a { color: rgba(244,236,221,0.45); text-decoration: none; }
   footer a:hover { color: var(--gold); }
 
-  @media (max-width: 560px) {
-    section.panel { padding: 72px 0; }
-    .nav-links { gap: 1.25rem; }
-    .nav-links a { font-size: 0.7rem; }
-    .join-form-wrap { padding: 28px 20px; }
+  @media (max-width: 640px) {
+    .nav-links { gap: 1rem; }
+    .nav-links a { font-size: 0.66rem; letter-spacing: 0.1em; }
+    .nav-brand { font-size: 0.85rem; }
   }
 </style>
 </head>
@@ -290,6 +55,7 @@
     <a href="index.html" class="nav-brand">Where Was Adam</a>
     <ul class="nav-links">
       <li><a href="series.html">The Series</a></li>
+      <li><a href="mary-magdalene.html">Apostolate</a></li>
       <li><a href="resources.html">Resources</a></li>
       <li><a href="join.html" class="active">Join</a></li>
     </ul>
@@ -297,97 +63,14 @@
 
   <div class="page-hero">
     <div class="eyebrow">The Brotherhood</div>
-    <h1>Show up here first.</h1>
-    <p>This is a place for men who are done being bystanders in their own lives.</p>
+    <h1>Coming soon.</h1>
+    <p>We're building a place for men who are ready to show up. Check back soon.</p>
+    <a href="series.html" class="btn">Read the Series</a>
   </div>
 
-  <section class="panel light">
-    <div class="wrap">
-      <div class="kicker">What You're Signing Up For</div>
-      <h2>You'll get the written reflections, and one weekly challenge. That's it. No noise.</h2>
-      <p>This is a slow, serious project — built for men who are ready to close the gap between who they are and who they're called to be.</p>
-      <ul class="what-list">
-        <li>Reflections from The Gap series, delivered directly</li>
-        <li>A weekly challenge — one concrete thing to do this week</li>
-        <li>Resources: books, Scripture, and tools worth your time</li>
-        <li>Updates as this community grows</li>
-      </ul>
-      <p>No noise. No spam. Just the work.</p>
-      <div class="verse">
-        "Be watchful, stand firm in the faith, act like men, be strong."
-        <cite>1 Corinthians 16:13</cite>
-      </div>
-    </div>
-  </section>
-
-  <section class="panel dark">
-    <div class="wrap">
-      <div class="kicker">Join</div>
-      <h2>I'm ready to close the gap.</h2>
-      <div class="join-form-wrap">
-        <form id="join-form">
-          <div class="form-group">
-            <label for="first-name">First Name</label>
-            <input type="text" id="first-name" placeholder="Your first name" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" placeholder="Your email address" required />
-          </div>
-          <button type="submit" class="btn">I'm In — Sign Me Up</button>
-          <p class="form-note">No spam. Unsubscribe anytime.<br/>This is a brotherhood, not a mailing list.</p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <section class="panel light">
-    <div class="wrap">
-      <div class="kicker">Knights of Columbus</div>
-      <h2>Find your brotherhood in person.</h2>
-      <p>The reflections and challenges on this site are meant to be lived out — not just read alone. One of the best places to do that is with a local Knights of Columbus council.</p>
-      <p>This site is rooted in <strong>Council #9257 at Christ the King Catholic Church</strong> in Milwaukie, Oregon. If you're local, we'd love to have you. If you're elsewhere, find the council nearest you.</p>
-      <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem;">
-        <a href="https://www2.kofc.org/en/get-involved/find-a-council.html" target="_blank" rel="noopener" style="display: inline-block; padding: 13px 24px; background: var(--rust); color: var(--cream); font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: background 0.2s;">Find a Council Near You</a>
-        <a href="https://www.kofc.org/en/get-involved/join-the-knights.html" target="_blank" rel="noopener" style="display: inline-block; padding: 13px 24px; background: transparent; color: var(--rust-dark); border: 2px solid var(--rust); font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: all 0.2s;">Learn About the Knights</a>
-      </div>
-    </div>
-  </section>
-
   <footer>
-    <div class="wrap">
-      <div class="mark">Where Was Adam</div>
-      <p>© 2026 Where Was Adam &nbsp;·&nbsp; <a href="series.html">The Series</a> &nbsp;·&nbsp; <a href="resources.html">Resources</a> &nbsp;·&nbsp; <a href="join.html">Join</a></p>
-    </div>
+    <p>© 2026 Where Was Adam &nbsp;·&nbsp; <a href="series.html">The Series</a> &nbsp;·&nbsp; <a href="mary-magdalene.html">Apostolate</a> &nbsp;·&nbsp; <a href="resources.html">Resources</a> &nbsp;·&nbsp; <a href="join.html">Join</a></p>
   </footer>
 
-  <script>
-    document.getElementById('join-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      var email = document.getElementById('email').value;
-      var firstName = document.getElementById('first-name').value;
-      var btn = this.querySelector('button[type="submit"]');
-      btn.textContent = 'Signing you up…';
-      btn.disabled = true;
-      fetch('https://api.convertkit.com/v3/forms/9712089/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ api_key: 'yzN2DwH9CvvAJVzNvDRaiQ', email: email, first_name: firstName })
-      })
-      .then(function(r) { return r.json(); })
-      .then(function(data) {
-        if (data.subscription) {
-          window.location.href = 'thank-you.html';
-        } else {
-          btn.textContent = 'Something went wrong — try again';
-          btn.disabled = false;
-        }
-      })
-      .catch(function() {
-        btn.textContent = 'Something went wrong — try again';
-        btn.disabled = false;
-      });
-    });
-  </script>
 </body>
 </html>
