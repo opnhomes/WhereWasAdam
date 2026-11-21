@@ -4,340 +4,87 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Where Was Adam?</title>
-<meta name="description" content="He was there. He said nothing. It's time to show up.">
-
-<!-- Favicon -->
+<meta name="description" content="He was there. He said nothing. It&#x27;s time to show up.">
+<meta name="theme-color" content="#17140f">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="shortcut icon" href="favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<meta name="theme-color" content="#17140f">
-
-<!-- Social / link-preview sharing -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://wherewasadam.org/">
 <meta property="og:title" content="Where Was Adam?">
-<meta property="og:description" content="He was there. He said nothing. It's time to show up.">
+<meta property="og:description" content="He was there. He said nothing. It&#x27;s time to show up.">
 <meta property="og:image" content="https://wherewasadam.org/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Where Was Adam?">
-<meta name="twitter:description" content="He was there. He said nothing. It's time to show up.">
-<meta name="twitter:image" content="https://wherewasadam.org/og-image.png">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --charcoal: #17140f;
-    --charcoal-2: #1f1b14;
-    --cream: #f4ecdd;
-    --cream-2: #ece1cd;
-    --rust: #b9552f;
-    --rust-dark: #8f3f22;
-    --gold: #c69a3f;
-    --ink: #23201a;
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Inter', sans-serif;
-    background: var(--charcoal);
-    color: var(--cream);
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  h1, h2, h3, .display {
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-  }
-
-  a { color: inherit; }
-
-  .wrap { max-width: 720px; margin: 0 auto; padding: 0 28px; }
-
-  /* NAV */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 28px;
-    background: rgba(23,20,15,0.93);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(198,154,63,0.15);
-  }
-
-  .nav-brand {
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: 0.95rem;
-    color: var(--gold);
-    text-decoration: none;
-    letter-spacing: 0.02em;
-  }
-
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-
-  .nav-links a {
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--cream-2);
-    text-decoration: none;
-    opacity: 0.7;
-    transition: opacity 0.2s, color 0.2s;
-  }
-
-  .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--gold); }
-
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 110px 28px 80px;
-    position: relative;
-    background:
-      radial-gradient(ellipse 90% 60% at 50% 0%, rgba(185,85,47,0.16), transparent 60%),
-      var(--charcoal);
-    border-bottom: 1px solid rgba(198,154,63,0.18);
-  }
-
-  .eyebrow {
-    font-size: 13px;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 22px;
-    font-weight: 500;
-  }
-
-  .hero h1 { font-size: clamp(2.6rem, 7vw, 4.6rem); line-height: 1.05; color: var(--cream); }
-  .hero h1 em { font-style: italic; color: var(--rust); }
-
-  .tagline {
-    margin-top: 26px;
-    font-size: clamp(1.05rem, 2.4vw, 1.3rem);
-    color: var(--cream-2);
-    max-width: 480px;
-  }
-
-  .tagline strong { color: var(--gold); font-weight: 600; }
-
-  .scroll-cue {
-    position: absolute;
-    bottom: 36px;
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(244,236,221,0.45);
-  }
-
-  /* SECTIONS */
-  section.panel { padding: 96px 0; }
-  .panel.dark { background: var(--charcoal); }
-  .panel.light { background: var(--cream); color: var(--ink); }
-  .panel.light h2 { color: var(--rust-dark); }
-  .panel.dark h2 { color: var(--gold); }
-
-  .kicker {
-    font-size: 12px;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 18px;
-    color: var(--rust);
-  }
-
-  h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); margin-bottom: 26px; line-height: 1.2; }
-
-  .panel p { font-size: 1.08rem; margin-bottom: 20px; }
-  .panel.light p { color: #40382c; }
-  .panel.dark p { color: var(--cream-2); }
-
-  .verse {
-    margin-top: 40px;
-    padding-left: 22px;
-    border-left: 3px solid var(--rust);
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 1.15rem;
-  }
-
-  .panel.light .verse { color: var(--rust-dark); }
-  .panel.dark .verse { color: var(--cream); }
-
-  .verse cite {
-    display: block;
-    margin-top: 10px;
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-size: 0.85rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    opacity: 0.7;
-  }
-
-  /* BUTTONS */
-  .btn {
-    display: inline-block;
-    padding: 13px 26px;
-    background: var(--cream);
-    color: var(--rust-dark);
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 2px solid var(--cream);
-    transition: background 0.2s;
-  }
-  .btn:hover { background: var(--cream-2); }
-  .btn.outline { background: transparent; color: var(--cream); }
-  .btn.outline:hover { background: rgba(244,236,221,0.1); }
-  .btn.rust { background: var(--rust); border-color: var(--rust); color: var(--cream); }
-  .btn.rust:hover { background: var(--rust-dark); border-color: var(--rust-dark); }
-  .btns { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px; }
-
-  /* CALLOUT */
-  .callout { background: var(--rust); color: var(--cream); padding: 90px 0; text-align: center; }
-  .callout .wrap { max-width: 640px; }
-  .callout h2 { color: var(--cream); font-size: clamp(1.8rem, 4.5vw, 2.5rem); }
-  .callout p { color: rgba(244,236,221,0.9); font-size: 1.1rem; margin-bottom: 28px; }
-  .callout .btns { justify-content: center; }
-
-  /* FOOTER */
-  footer { background: var(--charcoal-2); padding: 56px 0 40px; text-align: center; border-top: 1px solid rgba(198,154,63,0.15); }
-  footer .mark { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.1rem; color: var(--gold); margin-bottom: 10px; }
-  footer p { font-size: 0.85rem; color: rgba(244,236,221,0.45); }
-  footer a { color: rgba(244,236,221,0.45); text-decoration: none; }
-  footer a:hover { color: var(--gold); }
-
-  @media (max-width: 640px) {
-    section.panel { padding: 72px 0; }
-    .callout { padding: 64px 0; }
-    .nav-links { gap: 1rem; }
-    .nav-links a { font-size: 0.66rem; letter-spacing: 0.1em; }
-    .nav-brand { font-size: 0.85rem; }
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="wwa.css?v=20261121b">
+<script>document.documentElement.classList.add('js')</script>
+<script>window.WWA_CHALLENGES=[{"start": "2026-10-11", "title": "Who am I, really?", "kicker": "Week 1 Challenge · Identity", "body": "Part 1 — Name your false foundation. Find time to sit in front of the Blessed Sacrament. Ask our Lord to show you the one role, title, or achievement your sense of self collapses without …", "href": "reflection-1.html"}, {"start": "2026-10-18", "title": "What is really making my decisions?", "kicker": "Week 2 Challenge · Interior Life", "body": "Part 1 — Name your thief. Bring it to our Lord in prayer, ideally before the Blessed Sacrament, and ask Him to reveal the one that has been quietly deciding for you. Fear, pride, comfort…", "href": "reflection-2.html"}, {"start": "2026-10-25", "title": "Am I still showing up?", "kicker": "Week 3 Challenge · Marriage", "body": "Part 1 — Ask her, and listen. Bring it to our Lord first, ideally before the Blessed Sacrament: where have I gone quiet in my marriage? The conversation I’ve avoided, the apology I owe, the…", "href": "reflection-3.html"}, {"start": "2026-11-01", "title": "Is my strength a shelter or a cage?", "kicker": "Week 4 Challenge · Fatherhood", "body": "Part 1 — Ask, and listen. Spend time in Adoration and ask: where has my strength been serving me instead of them? Then ask one person who depends on you — a child, your wife, a young man…", "href": "reflection-4.html"}, {"start": "2026-11-08", "title": "Where are the men — and am I one of them?", "kicker": "Week 5 Challenge · Parish & Faith", "body": "Pick one visible, specific act of faith your family will actually see this week — not a private resolution, an observable one. Go to confession. Lead your family in prayer. Show up 30…", "href": "reflection-5.html"}, {"start": "2026-11-15", "title": "Who are my brothers — and whose brother am I?", "kicker": "Week 6 Challenge · Friendship", "body": "Part 1 — Name three. Write down the names of up to three men you trust, or want to trust, or have let drift. Then reach out to at least one of them with a specific invitation and a specific…", "href": "reflection-6.html"}];</script>
 </head>
 <body>
+<div id="progress"></div>
+<nav>
+  <a href="index.html" class="nav-brand">Where Was Adam</a>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="var l=document.querySelector('.nav-links');var o=l.classList.toggle('open');this.setAttribute('aria-expanded',o?'true':'false')"><span></span></button>
+  <ul class="nav-links"><li><a href="series.html">The Series</a></li><li><a href="mary-magdalene.html">Apostolate</a></li><li><a href="resources.html">Resources</a></li><li><a href="join.html">Join</a></li></ul>
+</nav>
+<header class="hero">
+  <div class="eyebrow">Where Was Adam</div>
+  <h1><span class="l l1">He was there.</span><span class="l l2">He said nothing.</span></h1>
+  <p class="tagline">It&rsquo;s <strong>time to show up.</strong></p>
+  <div class="btns"><a class="btn rust" href="series.html">Start the Series</a><a class="btn outline" href="mary-magdalene.html">The Apostolate</a></div>
+  <div class="daily">
+    <div class="box"><div class="label"><span>Today&rsquo;s Verse</span><span id="dv-date"></span></div><div class="vtext" id="dv-text">&ldquo;Where are you?&rdquo;</div><span class="vcite" id="dv-cite">Genesis 3:9</span></div>
+    <div class="box"><div class="label"><span>This Week&rsquo;s Challenge</span></div><div class="ctitle" id="wc-title">Who are my brothers, and whose brother am I?</div><div class="cbody" id="wc-body"></div><a class="go" id="wc-link" href="series.html">Read the reflection &rarr;</a><span id="wc-kicker" hidden></span></div>
+  </div>
+  <div class="scroll-cue">Scroll</div>
+</header>
 
-  <nav>
-    <a href="index.html" class="nav-brand">Where Was Adam</a>
-    <ul class="nav-links">
-      <li><a href="series.html">The Series</a></li>
-      <li><a href="mary-magdalene.html">Apostolate</a></li>
-      <li><a href="resources.html">Resources</a></li>
-      <li><a href="join.html">Join</a></li>
-    </ul>
-  </nav>
-
-  <section class="hero">
-    <div class="eyebrow">Where Was Adam</div>
-    <h1>He was there.<br><em>He said nothing.</em></h1>
-    <p class="tagline">It's <strong>time to show up.</strong></p>
-    <div class="scroll-cue">Scroll</div>
-  </section>
-
-  <section class="panel light">
-    <div class="wrap">
-      <div class="kicker">The Question</div>
-      <h2>We skip past one detail in the oldest story we know.</h2>
-      <p>
-        When the serpent came for Eve, Adam wasn't away tending some distant field.
-        Scripture is plain about it: he was already standing beside her. Present.
-        Watching. Silent.
-      </p>
-      <p>
-        The first attack on the family God had just made didn't happen while the man
-        was absent. It happened while he stood right there and said nothing.
-      </p>
-      <div class="verse">
-        "She also gave some to her husband, who was with her, and he ate."
-        <cite>Genesis 3:6</cite>
-      </div>
+<section class="story">
+  <div class="wrap">
+    <div class="story-head reveal">
+      <div class="kicker">The Story</div>
+      <h2 class="section-title">We skip past one detail in the oldest story we know.</h2>
     </div>
-  </section>
-
-  <section class="panel dark">
-    <div class="wrap">
-      <div class="kicker">The Point</div>
-      <h2>This isn't a story about blame. It's a question about presence.</h2>
-      <p>
-        Every man since Eden has inherited the same post Adam was given and the same
-        silence he fell into. In a marriage, a family, a friendship, a parish, a
-        workplace — there is always a moment that calls for a man to step in, speak up,
-        or simply stand where he said he would stand.
-      </p>
-      <p>
-        Most of the damage done in this world isn't done by monsters. It's done in the
-        gap left by good men who were there, and said nothing.
-      </p>
+    <div class="tabs tabbar" data-tabs><div class="tablist" role="tablist">
+      <button class="tab" role="tab" data-target="question">The Question</button>
+      <button class="tab" role="tab" data-target="point">The Point</button>
+    </div></div>
+    <div class="tabpanel light" data-panel="question">
+      <p>When the serpent came for Eve, Adam wasn&rsquo;t away tending some distant field. Scripture is plain about it: he was already standing beside her. Present. Watching. Silent.</p>
+      <p>The first attack on the family God had just made didn&rsquo;t happen while the man was absent. It happened while he stood right there and said nothing.</p>
+      <div class="verse">&ldquo;She also gave some to her husband, who was with her, and he ate.&rdquo;<cite>Genesis 3:6</cite></div>
+      <div class="next-tab"><button data-next-tab="point">The point &rarr;</button></div>
     </div>
-  </section>
-
-  <section class="panel light">
-    <div class="wrap">
-      <div class="kicker">The Series</div>
-      <h2>The Gap</h2>
-      <p>
-        Nine reflections on where men are called to show up: identity, the interior
-        life, marriage, fatherhood, faith, friendship, and work. Each one ends in the
-        same place, with a man finally willing to stand in the gap.
-      </p>
-      <div class="btns">
-        <a class="btn rust" href="series.html">Read the Series</a>
-      </div>
+    <div class="tabpanel light" data-panel="point">
+      <p>This isn&rsquo;t a story about blame. It&rsquo;s a question about presence. Every man since Eden has inherited the same post Adam was given and the same silence he fell into. In a marriage, a family, a friendship, a parish, a workplace &mdash; there is always a moment that calls for a man to step in, speak up, or simply stand where he said he would stand.</p>
+      <p>Most of the damage done in this world isn&rsquo;t done by monsters. It&rsquo;s done in the gap left by good men who were there, and said nothing.</p>
+      <div class="next-tab"><button data-next-tab="question">&larr; The question</button></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="panel dark">
-    <div class="wrap">
-      <div class="kicker">The Apostolate</div>
-      <h2>Show up in prayer.</h2>
-      <p>
-        The Mary Magdalene Apostolate keeps watch in prayer for the women exploited in
-        the sex trade, for the men who buy, and for those who profit. Adam stood by.
-        Mary Magdalene stayed at the cross.
-      </p>
-      <div class="btns">
-        <a class="btn outline" href="mary-magdalene.html">The Mary Magdalene Apostolate</a>
-      </div>
+<section class="paths">
+  <div class="wrap wide">
+    <div class="kicker reveal">Where to Begin</div>
+    <h2 class="section-title reveal">Pick a place to show up.</h2>
+    <div class="grid">
+      <a class="card cardlink reveal d1" href="series.html"><div class="tag">The Series</div><h3>The Gap</h3><p>Nine reflections on identity, the interior life, marriage, fatherhood, faith, friendship, and work.</p><span class="more go">Read the series</span></a>
+      <a class="card cardlink reveal d2" href="mary-magdalene.html"><div class="tag">The Apostolate</div><h3>Mary Magdalene Apostolate</h3><p>Keeping watch in prayer for the exploited, the buyers, and those who profit. Adam stood by. She stayed at the cross.</p><span class="more go">Join in prayer</span></a>
+      <a class="card cardlink reveal d3" href="resources.html"><div class="tag">Resources</div><h3>Tools for the Work</h3><p>A prayer, this week&rsquo;s challenge, Scripture for men, and books worth your time.</p><span class="more go">Open the toolbox</span></a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="callout">
-    <div class="wrap">
-      <h2>So the question isn't where Adam was. It's where you are right now.</h2>
-      <p>
-        Join the brotherhood and receive new writing, weekly challenges, and resources
-        as they're published.
-      </p>
-      <div class="btns">
-        <a class="btn" href="join.html">Join the Brotherhood</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="wrap">
-      <div class="mark">Where Was Adam</div>
-      <p>© 2026 Where Was Adam &nbsp;·&nbsp; <a href="series.html">The Series</a> &nbsp;·&nbsp; <a href="mary-magdalene.html">Apostolate</a> &nbsp;·&nbsp; <a href="resources.html">Resources</a> &nbsp;·&nbsp; <a href="join.html">Join</a></p>
-    </div>
-  </footer>
-
+<section class="callout"><div class="wrap reveal"><h2>So the question isn&rsquo;t where Adam was. It&rsquo;s where you are right now.</h2><p>Join the brotherhood and receive new writing, weekly challenges, and resources as they&rsquo;re published.</p><div class="btns"><a href="join.html" class="btn">Join the Brotherhood</a></div></div></section>
+<footer>
+  <div class="wrap">
+    <div class="mark">Where Was Adam</div>
+    <p>&copy; 2026 Where Was Adam &nbsp;&middot;&nbsp; <a href="series.html">The Series</a> &nbsp;&middot;&nbsp; <a href="mary-magdalene.html">Apostolate</a> &nbsp;&middot;&nbsp; <a href="resources.html">Resources</a> &nbsp;&middot;&nbsp; <a href="join.html">Join</a></p>
+  </div>
+</footer>
+<script src="wwa.js?v=20261121b" defer></script>
 </body>
 </html>

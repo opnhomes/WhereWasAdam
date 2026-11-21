@@ -10,67 +10,37 @@
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="shortcut icon" href="favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wherewasadam.org/join.html">
+<meta property="og:title" content="Join — Where Was Adam?">
+<meta property="og:description" content="The brotherhood is coming soon.">
+<meta property="og:image" content="https://wherewasadam.org/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --charcoal: #17140f; --charcoal-2: #1f1b14; --cream: #f4ecdd; --cream-2: #ece1cd;
-    --rust: #b9552f; --rust-dark: #8f3f22; --gold: #c69a3f;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Inter', sans-serif; background: var(--charcoal); color: var(--cream); line-height: 1.65; -webkit-font-smoothing: antialiased; min-height: 100vh; display: flex; flex-direction: column; }
-  h1 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
-  a { color: inherit; }
-
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 18px 28px; background: rgba(23,20,15,0.93); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(198,154,63,0.15); }
-  .nav-brand { font-family: 'Fraunces', serif; font-weight: 600; font-size: 0.95rem; color: var(--gold); text-decoration: none; letter-spacing: 0.02em; }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream-2); text-decoration: none; opacity: 0.7; transition: opacity 0.2s, color 0.2s; }
-  .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--gold); }
-
-  .page-hero { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 140px 28px 80px; background: radial-gradient(ellipse 90% 60% at 50% 0%, rgba(185,85,47,0.16), transparent 60%), var(--charcoal); }
-  .eyebrow { font-size: 13px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 22px; font-weight: 500; }
-  .page-hero h1 { font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.05; margin-bottom: 18px; }
-  .page-hero p { font-size: clamp(1rem, 2.2vw, 1.2rem); color: var(--cream-2); max-width: 480px; opacity: 0.85; margin-bottom: 30px; }
-  .btn { display: inline-block; padding: 13px 26px; background: var(--cream); color: var(--rust-dark); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; }
-  .btn:hover { background: var(--cream-2); }
-
-  footer { background: var(--charcoal-2); padding: 40px 0; text-align: center; border-top: 1px solid rgba(198,154,63,0.15); }
-  footer p { font-size: 0.85rem; color: rgba(244,236,221,0.45); }
-  footer a { color: rgba(244,236,221,0.45); text-decoration: none; }
-  footer a:hover { color: var(--gold); }
-
-  @media (max-width: 640px) {
-    .nav-links { gap: 1rem; }
-    .nav-links a { font-size: 0.66rem; letter-spacing: 0.1em; }
-    .nav-brand { font-size: 0.85rem; }
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="wwa.css?v=20261121b">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-
-  <nav>
-    <a href="index.html" class="nav-brand">Where Was Adam</a>
-    <ul class="nav-links">
-      <li><a href="series.html">The Series</a></li>
-      <li><a href="mary-magdalene.html">Apostolate</a></li>
-      <li><a href="resources.html">Resources</a></li>
-      <li><a href="join.html" class="active">Join</a></li>
-    </ul>
-  </nav>
-
-  <div class="page-hero">
-    <div class="eyebrow">The Brotherhood</div>
-    <h1>Coming soon.</h1>
-    <p>We're building a place for men who are ready to show up. Check back soon.</p>
-    <a href="series.html" class="btn">Read the Series</a>
+<div id="progress"></div>
+<nav>
+  <a href="index.html" class="nav-brand">Where Was Adam</a>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="var l=document.querySelector('.nav-links');var o=l.classList.toggle('open');this.setAttribute('aria-expanded',o?'true':'false')"><span></span></button>
+  <ul class="nav-links"><li><a href="series.html">The Series</a></li><li><a href="mary-magdalene.html">Apostolate</a></li><li><a href="resources.html">Resources</a></li><li><a href="join.html" class="active">Join</a></li></ul>
+</nav>
+<section class="join-stage">
+  <div class="eyebrow">The Brotherhood</div>
+  <h1>Coming soon.</h1>
+  <p>We&rsquo;re building a place for men who are ready to show up. Check back soon.</p>
+  <div class="btns" style="justify-content:center"><a href="series.html" class="btn">Read the Series</a><a href="mary-magdalene.html" class="btn outline">The Apostolate</a></div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="mark">Where Was Adam</div>
+    <p>&copy; 2026 Where Was Adam &nbsp;&middot;&nbsp; <a href="series.html">The Series</a> &nbsp;&middot;&nbsp; <a href="mary-magdalene.html">Apostolate</a> &nbsp;&middot;&nbsp; <a href="resources.html">Resources</a> &nbsp;&middot;&nbsp; <a href="join.html">Join</a></p>
   </div>
-
-  <footer>
-    <p>© 2026 Where Was Adam &nbsp;·&nbsp; <a href="series.html">The Series</a> &nbsp;·&nbsp; <a href="mary-magdalene.html">Apostolate</a> &nbsp;·&nbsp; <a href="resources.html">Resources</a> &nbsp;·&nbsp; <a href="join.html">Join</a></p>
-  </footer>
-
+</footer>
+<script src="wwa.js?v=20261121b" defer></script>
 </body>
 </html>
