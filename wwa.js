@@ -166,6 +166,32 @@
     go(m ? parseInt(m[1], 10) - 1 : 0, false);
   }
 
+  /* EMAIL SIGNUP -> Kit (public API key, safe in the page) */
+  $$('form.signup').forEach(function (f) {
+    var msg = $('.signup-msg', f), btn = $('button[type=submit]', f), email = $('input[type=email]', f);
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if ($('.hp', f).value) return;                       // bot trap
+      var v = (email.value || '').trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) { msg.textContent = 'Please enter a valid email address.'; email.focus(); return; }
+      var label = btn.textContent;
+      btn.disabled = true; btn.textContent = 'Signing you up\u2026'; msg.textContent = '';
+      fetch('https://api.convertkit.com/v3/forms/' + f.getAttribute('data-kit-form') + '/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json; charset=utf-8' },
+        body: JSON.stringify({ api_key: f.getAttribute('data-kit-key'), email: v })
+      }).then(function (r) {
+        return r.json().then(function (d) { return { ok: r.ok, d: d }; });
+      }).then(function (res) {
+        if (res.ok) { window.location.href = 'thank-you.html'; return; }
+        throw new Error((res.d && (res.d.message || res.d.error)) || 'Something went wrong');
+      }).catch(function () {
+        btn.disabled = false; btn.textContent = label;
+        msg.textContent = 'Sorry, that didn\u2019t go through. Please try again in a moment.';
+      });
+    });
+  });
+
   /* DAILY VERSE */
   var verses = [
     ['Where are you?', 'Genesis 3:9'],
