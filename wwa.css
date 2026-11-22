@@ -385,3 +385,16 @@ footer a:hover { color: var(--gold); }
 @media (max-width: 560px) { .signup button.btn { width: 100%; } }
 .join-stage .signup-msg { font-size: .92rem; max-width: none; margin: 10px 0 0; color: #f0b49c; }
 .join-stage .signup-note { font-size: .8rem; max-width: none; margin: 4px 0 0; color: rgba(244,236,221,.6); }
+
+/* SERIES: the "read" mark is the site logo (serif A in a ring) */
+.readmark {
+  width: 38px; height: 38px; padding: 0; border-radius: 50%;
+  border: 2px solid rgba(185,85,47,.4);
+  background: radial-gradient(circle at 50% 30%, #241f17, #17140f);
+  color: rgba(198,154,63,.35);
+  font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.15rem; line-height: 1; letter-spacing: 0;
+  transition: color .25s, border-color .25s, box-shadow .25s, transform .25s var(--ease);
+}
+.readmark:hover { border-color: var(--rust); color: rgba(198,154,63,.8); transform: scale(1.08); }
+.entry.read .readmark { background: radial-gradient(circle at 50% 30%, #241f17, #17140f); border-color: var(--rust); color: var(--gold); box-shadow: 0 0 0 3px rgba(198,154,63,.18), 0 0 18px rgba(198,154,63,.25); }
+.entry.read .num::after { content: none; }
