@@ -224,6 +224,17 @@
     if (vd) vd.textContent = now.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
   }
 
+  /* RESOURCES: "This Week" follows the calendar */
+  var wkData = $('#wk-data');
+  if (wkData) {
+    try {
+      var weeks = JSON.parse(wkData.textContent), now2 = new Date(), cur = weeks[0];
+      weeks.forEach(function (w) { if (new Date(w.start + 'T00:00:00') <= now2) cur = w; });
+      $('#wk-h2').textContent = cur.h2;
+      $('#wk-card').innerHTML = cur.card;
+    } catch (err) {}
+  }
+
   /* WEEKLY CHALLENGE */
   var ch = window.WWA_CHALLENGES;
   var ct = $('#wc-title');
